@@ -1,0 +1,416 @@
+/*begin global styling*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body{
+	height: 100%;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+h1{ 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+/*end global styling*/
+
+/*begin reusable display classes*/
+.defeated{
+	display: none;
+}
+
+.hide{
+	display: none;
+}
+/*end reusable display classes*/
+
+/*main background image*/
+.back{ 
+  background: url(../images/star-wars.jpg) no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/*begin header section classes*/
+.header{
+	background-color: #FFFFFF;
+	border-top: 5px solid #000000;
+	border-bottom: 5px solid #000000;
+	width: 100%;
+	height: 75px;
+	margin-bottom: 30px;
+	opacity: 0.50;
+}
+
+.head-wrapper{
+	position: relative;
+	width: 90%;
+	height: 75px;
+	margin: 0 auto;
+}
+
+.saber-left{
+	position: relative;
+	top: 25px;
+	background: url(../images/saber-left.png) no-repeat;
+	float: left;
+	width: 572px;
+	height: 37px;
+	z-index: 100;
+}
+
+#progress-left{
+	position: absolute;
+	top: 39px;
+	margin-left: 165px;
+	background-color: #03A508;
+	border: 1px solid #03A508;
+	border-radius: 15px;
+	width: 0px;
+	height: 16px;
+	z-index: 99;
+}
+
+#name-left{
+	position: absolute;
+	left: 200px;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 32px;
+}
+
+.saber-right{
+	position: relative;
+	top: 25px;
+	background: url(../images/saber-right.png) no-repeat;
+	float: right;
+	width: 572px;
+	height: 37px;
+	z-index: 100;
+}
+
+#progress-right{
+	position: absolute;
+	top: 39px;
+	right: 167px;
+	background-color: #03A508;
+	border: 1px solid #03A508;
+	border-radius: 15px;
+	width: 0px;
+	height: 16px;
+	z-index: 99;
+}
+
+#name-right{
+	position: absolute;
+	right: 200px;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 32px;
+}
+
+.symbol{
+	position: absolute;
+	background: url(../images/rebel.png) no-repeat;
+	top: 20px;
+	left: 50%;
+	margin-left: -36px; 
+	height: 75px;
+	width: 71px;
+}
+/*end header section classes*/
+
+/*begin side edge classes*/
+.side-cover{
+	position: fixed;
+	right: 0;
+	height: 100%;
+	width: 240px;
+	z-index: 101;
+}
+
+.player-side{
+	position: fixed;
+	background: url(../images/player.png) no-repeat;
+	left: 0;
+	top: 200px;
+	width: 50px;
+	height: 374px;
+}
+
+.computer-side{
+	position: fixed;
+	background: url(../images/computer.png) no-repeat;
+	right: 0;
+	top: 200px;
+	width: 50px;
+	height: 374px;
+}
+/*end side edge classes*/
+
+/*main content wrapper*/
+.wrapper{
+	width: 90%;
+  height: 100%;
+	margin: 0 auto;
+}
+
+/*begin character card classes*/
+.character{
+	background-color: #000000 !important;
+	border: 1px solid #FFFFFF;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.friend{
+	background-color: #000000 !important;
+	border: 1px solid #0800FC;
+	position: absolute;
+	margin-top: 25px;
+	left: 475px;
+	bottom: 0;
+	z-index: 100;
+}
+
+.enemy-fight{
+	background-color: #000000 !important;
+	border: 1px solid #0800FC;
+	position: absolute;
+	margin-top: 25px;
+	right: 475px;
+	bottom: 0;
+	z-index: 100;
+}
+
+.enemy{
+	background-color: #000000 !important;
+	border: 1px solid #FC0000;
+	margin-top: 25px;
+	float: right;
+	position: relative;
+	clear: right;
+	cursor: pointer;
+	z-index: 100;
+}
+
+#skywalker{
+	background: url(../images/skywalker-card-small.png) no-repeat;
+	width: 128px;
+	height: 150px;
+}
+
+#obi{
+	background: url(../images/obi-card-small.png) no-repeat;
+	width: 128px;
+	height: 150px;
+}
+
+#yoda{
+	background: url(../images/yoda-card-small.png) no-repeat;
+	width: 128px;
+	height: 150px;
+}
+
+#vader{
+	background: url(../images/vader-card-small.png) no-repeat;
+	width: 128px;
+	height: 150px;
+}
+
+.attack-count{
+	position: absolute;
+	margin-top: 128px;
+	margin-left: 19px;
+	color: #FFFFFF;
+	font-size: 14px;
+}
+
+.counter-count{
+	position: absolute;
+	margin-top: 128px;
+	margin-left: 92px;
+	color: #FFFFFF;
+	font-size: 14px;
+}
+/*end character card classes*/
+
+/*attack button*/
+.attack{
+	background-color: #03A508;
+	border: 1px solid #000000;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	position: absolute;
+	left: 50%;
+	margin-left: -75px;
+	bottom: 0;
+	clear: both;
+	width: 150px;
+	height: 40px;
+	padding-top: 4px;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+/*begin character avatars*/
+.fighter-left{
+	position: absolute;
+	bottom: 0;
+	left: 20%;
+	z-index: 99;
+}
+
+.fighter-right{
+	position: absolute;
+	bottom: 0;
+	right: 20%;
+	z-index: 99;
+}
+
+#skywalker-left{
+	background: url(../images/img-skywalker-left.png) no-repeat;
+	width: 221px;
+	height: 375px;
+}
+
+#obi-left{
+	background: url(../images/img-obi-left.png) no-repeat;
+	width: 220px;
+	height: 375px;
+}
+
+#yoda-left{
+	background: url(../images/img-yoda-left.png) no-repeat;
+	width: 138px;
+	height: 275px;
+}
+
+#vader-left{
+	background: url(../images/img-vader-left.png) no-repeat;
+	width: 213px;
+	height: 375px;
+}
+
+#skywalker-right{
+	background: url(../images/img-skywalker-right.png) no-repeat;
+	width: 221px;
+	height: 375px;	
+}
+
+#obi-right{
+	background: url(../images/img-obi-right.png) no-repeat;
+	width: 220px;
+	height: 375px;
+}
+
+#yoda-right{
+	background: url(../images/img-yoda-right.png) no-repeat;
+	width: 138px;
+	height: 275px;
+}
+
+#vader-right{
+	background: url(../images/img-vader-right.png) no-repeat;
+	width: 213px;
+	height: 375px;
+}
+/*end character card classes*/
+
+/*game messages*/
+.select-msg-left{
+	top: 340px;
+	position: absolute;
+	border-bottom: 5px solid #FFFFFF;
+	padding-bottom: 7px;
+	color: #FFFFFF;
+  font-size: 48px;
+  left: 150px;
+  z-index: 99;
+}
+
+.select-msg-right{
+	top: 340px;
+	position: absolute;
+	border-bottom: 5px solid #FFFFFF;
+	padding-bottom: 7px;
+	color: #FFFFFF;
+  font-size: 48px;
+  right: 150px;
+  z-index: 99;
+}
+
+.select-mid{
+	top: 340px;
+	position: absolute;
+	color: #FFFFFF;
+  font-size: 48px;
+  text-decoration: underline;
+  width: 100%;
+  right: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+}
+
+.victory-msg{
+	top: 100px;
+	position: absolute;
+	color: #0800FC;
+  font-size: 64px;
+  width: 100%;
+  right: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+}
+
+.victory-nm{
+	top: 200px;
+	position: absolute;
+	color: #0800FC;
+  font-size: 64px;
+  width: 100%;
+  right: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+}
+
+.defeat-msg{
+	top: 100px;
+	position: absolute;
+	color: #FC0000;
+  font-size: 64px;
+  width: 100%;
+  right: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+}
+
+.defeat-nm{
+	top: 200px;
+	position: absolute;
+	color: #FC0000;
+  font-size: 64px;
+  width: 100%;
+  right: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+}
+/*game messages*/
