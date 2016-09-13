@@ -1,0 +1,211 @@
+/*begin global styling*/
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body{
+	height: 100%;
+}
+
+body{
+  padding: 0px;
+  margin: 0px;
+}
+
+h1{ 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+h3 { 
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+/*end global styling*/
+
+/*universal class for hiding an element*/
+.hide{
+	display: none;
+}
+
+/*wrapper for entire page*/
+.page-wrapper{
+	height: 100%;
+}
+
+/*begin header styling*/
+.header{
+	margin-bottom: 25px;
+}
+
+.header1{
+	height: 25px;
+	background-color: #fc0202;
+}
+
+.header2{
+	height: 25px;
+	background-color: white;
+}
+
+.header3{
+	height: 25px;
+	background-color: #090075;
+}
+
+.head-wrapper{
+	position: absolute;
+	width: 90%;
+	height: 75px;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.emblem-left{
+	background-image: url("../images/usa2.png");
+	width: 118px;
+	height: 75px;
+	float: left;
+}
+
+.title{
+	float: right;
+	color: #FFFFFF;
+	font-size: 25px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+/*end header styling*/
+
+/*wrapper for content below the header*/
+.content-wrapper{
+	position: relative;
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+}
+
+/*begin styling for side panel*/
+.side-wrapper{
+	width: 300px;
+	border: 1px solid #fc0202;
+	border-radius: 5px;
+	background-color: #fc0202;
+	padding: 30px;
+	position: absolute;
+	z-index: 100;
+}
+
+.patriot{
+	text-align: center;
+	color: #FFFFFF;
+	margin-top: 0px;
+}
+
+.text-field{
+	width: 100%;
+	background-color: #FFFFFF;
+	border: 1px solid #090075;
+	border-radius: 5px;
+	padding: 10PX;
+}
+
+.submit{
+	text-align: center;
+	width: 100%;
+	color: #FFFFFF;
+	background-color: #090075;
+	border: 1px solid #FFFFFF;
+	border-radius: 5px;
+	padding: 10px 0px 10px 0px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.news{
+	text-align: center;
+	width: 100%;
+	background-color: #FFFFFF;
+	border: 1px solid #FFFFFF;
+	border-radius: 5px;
+	padding: 10px 25px 10px 25px;
+	margin-top: 25px;
+	cursor: pointer;
+}
+/*end styling for side panel*/
+
+/*intro animated gif*/
+.intro{
+	position: absolute;
+	border: 1px solid #000000;
+	width: 70%;
+	right: 0;
+	max-height: 500px;
+}
+
+/*begin styling for images and image area*/
+.item{
+	position: relative;
+	margin-right: 50px;
+	margin-bottom: 25px;
+	float: left;
+	z-index: 100;
+	cursor: pointer;
+}
+
+.image{
+	border: 1px solid #000000;
+	margin-top: 5px;
+}
+
+.images{
+	position: relative;
+	width: 75%;
+	float: right;
+	min-height: 427px;
+}
+/*end styling for images and image area*/
+
+/*footer with image*/
+.footer{
+	clear: both;
+	position: absolute;
+  bottom: 0;
+	background-image: url("../images/washington.png");
+	width: 100%;
+	height: auto;
+	background-size: cover;
+  min-height: 250px;
+  z-index: 99;
+}
+
+/*pulls footer into position*/
+.pull{
+	margin-bottom: -250px;
+}
+.foot-switch{
+  position: relative;
+}

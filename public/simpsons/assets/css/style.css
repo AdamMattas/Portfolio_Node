@@ -1,0 +1,253 @@
+/*begin global styling*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body{
+	height: 100%;
+	background-color: blue;
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+h1{ 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h2{
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h3{ 
+  display: block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+/*end global styling*/
+
+.hide{
+	display: none;
+}
+
+/*begin header, start button, and timer*/
+.logo{
+	position: absolute;
+}
+
+.start-button{
+	position: absolute;
+	right: 0;
+	background-image: url(../images/buttonOn.png);
+	width: 87px;
+	height: 90px;
+	z-index: 100;
+}
+
+.start-button:hover{
+	position: absolute;
+	right: 0;
+	background-image: url(../images/buttonOff.png);
+	width: 87px;
+	height: 90px;
+}
+
+.numbers{
+	position: absolute;
+	top: 25px;
+	right: 20px;
+	width: 50px;
+	height: 40px;
+	font-size: 40px;
+	color: #FFFFFF;
+	text-align: center;
+	z-index: 99;
+}
+
+.timer{
+	position: absolute;
+	right: 0;
+	background-image: url(../images/timerRed.png);
+	width: 87px;
+	height: 90px;
+	z-index: 98;
+}
+
+.header{
+	width: 100%;
+	height: 47px;
+	background-color: #000000;
+}
+/*end header, start button, and timer*/
+
+/*begin score display*/
+.correct-answer{
+	position: absolute;
+	top: 150px;
+	left: -225px;
+	width: 275px;
+	height: 50px;
+	background-color: green;
+	border: 3px solid #000000;
+	border-radius: 15px;
+	color: #FFFFFF;
+	padding: 5px 15px 5px 35px;
+	font-size: 32px;
+}
+
+.incorrect-answer{
+	position: absolute;
+	top: 225px;
+	left: -225px;
+	width: 275px;
+	height: 50px;
+	background-color: red;
+	border: 3px solid #000000;
+	border-radius: 15px;
+	color: #FFFFFF;
+	padding: 5px 15px 5px 35px;
+	font-size: 32px;
+}
+
+.correct-num{
+	float: right;
+	color: #FFFFFF;
+	font-size: 32px;
+}
+/*end score display*/
+
+/*main background image*/
+.back-pic{
+	position: relative;
+  background: url(../images/simp_back.png) no-repeat;
+  background-size: cover;
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.main-wrap{
+	width: 100%;
+  height: 100%;
+}
+
+/*wrappers*/
+.vid-wrap{
+	width: 100%;
+	height: 100%;
+}
+
+/*begin display area for questions and videos*/
+.viewScreen{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 800px;
+	height: 570px;
+	z-index: 98;
+}
+
+.imgScreen{
+	position: absolute;
+	background-image: url(../images/001.jpg);
+	top: 52px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 590px;
+	height: 426px;
+	z-index: 99;
+}
+
+.question-back{
+	position: absolute;
+	background-color: blue;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 70px auto 0 auto;
+	width: 470px;
+	height: 311px;
+	z-index: 99;
+}
+
+.trivia-question{
+	text-align: center;
+	margin-top: 25px;
+	color: #FFFFFF;
+	line-height: 40px;
+}
+
+.trivia-status{
+	text-align: center;
+	margin-top: 100px;
+	color: #FFFFFF;
+	font-size: 32px;
+}
+/*end display area for questions and videos*/
+
+.new{
+	margin-top: 200px;
+	width: 100px;
+	height: 25px;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+/*begin answer choices*/
+.choose{
+	color: #FFFFFF;
+	text-align: center;
+}
+
+.answer-container{
+	position: absolute;
+	bottom: -300px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	width: 800px;
+	height: 300px;
+	background-color: #000000;
+	border: 3px solid #ed3133;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	border-bottom: none;
+}
+
+.choices{
+	margin: 25px auto;
+	width: 750px;
+	height: 50px;
+	background-color: #FFFFFF;
+	border: 1px solid #ed3133;
+	border-radius: 15px;
+	color: #000000;
+	font-size: 20px;
+	padding: 15px;
+	text-align: center;
+	cursor: pointer;
+}
+/*end answer choices*/
