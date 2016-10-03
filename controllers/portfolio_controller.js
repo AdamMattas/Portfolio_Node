@@ -86,4 +86,9 @@ router.put('/burgers/update/:id', function (req, res) {
   });
 });
 
+//get request that displays the resume_2016.pdf file
+router.get('/resume', function(req, res){
+  res.sendFile(path.join(__dirname + './../public/resume/resume_2016.pdf'));
+});
+
 module.exports = router;
