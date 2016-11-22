@@ -152,7 +152,7 @@ $(document).on('ready', function(){
 // BEGIN THE NEW YORK TIMES API CODE
 
     // =========================================
-    var authKey = "9d4a8986921972b65754ea0809d47c84:12:74623931";
+    var authKey = "8722c324037644f58c38b397b0c614b5";
 
     // Search Parameters
     var queryTerm   = "";
