@@ -1,4 +1,4 @@
-var breakTag = document.createElement("<br />");
+var breakTag = document.createElement("br");
 
 var hangman = {
     title:"Star Trek Hangman Game",
