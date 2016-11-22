@@ -82,7 +82,7 @@ endeavor = {
 scraper = {
     title:"CNN Scraper",
     image:"assets/images/scraper_side.jpg",
-    body:"CNN Scraper is an app that searches the world politics section of CNN.com for articles and stores them in a database. Stored articles are then displayed on the application and can be cycled through. In addition to storing the articles, any app user can post comments on any of the articles. The comments are then stored in the database along with the date and time. Party affiliation is also posted to provide further insight regarding a poster and their comments. Every time the app is loaded a new article scrape of CNN.com is performed. If a new article is found it is immediately stored. If the article already exists, it is not duplicated in the database. CNN Scraper is powered by Node, Express, Handlebars, Cheerio, Request, Moment, Mongoose, and MongoDB. The slideshow used to cycle through the stored articles was made with jQuery and comment posts are sent using AJAX.",
+    body:"CNN Scraper is an app that searches the world politics section of CNN.com for articles and stores them in a database. Stored articles are then displayed on the application and can be cycled through. In addition to storing the articles, any app user can post comments on any of the articles. The comments are then stored in the database along with the date and time. Party affiliation is also posted to provide further insight regarding a poster and their comments. Every time the app is loaded, a new article scrape of CNN.com is performed. If a new article is found it is immediately stored. If the article already exists, it is not duplicated in the database. CNN Scraper is powered by Node, Express, Handlebars, Cheerio, Request, Moment, Mongoose, and MongoDB. The slideshow used to cycle through the stored articles was made with jQuery and comment posts are sent using AJAX.",
     link:"https://dry-island-51573.herokuapp.com/",
     linkName:"View Now",
     rutgers: true,
@@ -100,7 +100,7 @@ cash = {
 ffc = {
     title:"Friends of Fountain Fairview Cemetery",
     image:"assets/images/ffc_side.jpg",
-    body:"I Was Here is a website for users to post and search for stories about travel. The stories posted on this site are complemented by 2 APIs. The Google Places API is used to search locations and return an image, address and checks for hours of operation to see if the location is currently open for business. Simultaneously, the latitude and longitude returned by Google Places is sent to the Weather Underground API, which returns the current weather for that location. Logged in users are able to post stories they would like to share and add keywords that are clickable and connected to the Google Places API. No user authentication is required to search for content on the site. Firebase was used for the user account creation and authentication, as well as to store posted content for the site.",
+    body:"Friends of Fountain Fairview Cemetery is a benevolent society dedicated to preserving and promoting the unique heritage of the Fountain Fairview Cemetery. I created this site as a volunteer to help this organization have an online presence capable of reaching a larger audience. This site was built with administrator capabilities for adding new content and by the organization. This is done very simply by the owner and gives them total dynamic control over the content displayed on their site.",
     link:"https://ffcfriends.herokuapp.com/",
     linkName:"View Now",
     rutgers: false,
