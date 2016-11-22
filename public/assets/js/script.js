@@ -52,6 +52,51 @@ travel = {
     rutgers: true,
     status: 2
 },
+friend = {
+    title:"Friend Finder Survey",
+    image:"assets/images/finder_side.jpg",
+    body:"I Was Here is a website for users to post and search for stories about travel. The stories posted on this site are complemented by 2 APIs. The Google Places API is used to search locations and return an image, address and checks for hours of operation to see if the location is currently open for business. Simultaneously, the latitude and longitude returned by Google Places is sent to the Weather Underground API, which returns the current weather for that location. Logged in users are able to post stories they would like to share and add keywords that are clickable and connected to the Google Places API. No user authentication is required to search for content on the site. Firebase was used for the user account creation and authentication, as well as to store posted content for the site.",
+    link:"https://friend-finder-survey.herokuapp.com/",
+    linkName:"View Now",
+    rutgers: true,
+    status: 2
+},
+burger = {
+    title:"Eat Da Burger",
+    image:"assets/images/burger_side.jpg",
+    body:"I Was Here is a website for users to post and search for stories about travel. The stories posted on this site are complemented by 2 APIs. The Google Places API is used to search locations and return an image, address and checks for hours of operation to see if the location is currently open for business. Simultaneously, the latitude and longitude returned by Google Places is sent to the Weather Underground API, which returns the current weather for that location. Logged in users are able to post stories they would like to share and add keywords that are clickable and connected to the Google Places API. No user authentication is required to search for content on the site. Firebase was used for the user account creation and authentication, as well as to store posted content for the site.",
+    link:"/burger",
+    linkName:"View Now",
+    rutgers: true,
+    status: 2
+},
+endeavor = {
+    title:"Endeavor",
+    image:"assets/images/endeavor_side.jpg",
+    body:"I Was Here is a website for users to post and search for stories about travel. The stories posted on this site are complemented by 2 APIs. The Google Places API is used to search locations and return an image, address and checks for hours of operation to see if the location is currently open for business. Simultaneously, the latitude and longitude returned by Google Places is sent to the Weather Underground API, which returns the current weather for that location. Logged in users are able to post stories they would like to share and add keywords that are clickable and connected to the Google Places API. No user authentication is required to search for content on the site. Firebase was used for the user account creation and authentication, as well as to store posted content for the site.",
+    link:"https://boiling-wave-68262.herokuapp.com/",
+    linkName:"View Now",
+    rutgers: true,
+    status: 2
+},
+scraper = {
+    title:"CNN Scraper",
+    image:"assets/images/scraper_side.jpg",
+    body:"I Was Here is a website for users to post and search for stories about travel. The stories posted on this site are complemented by 2 APIs. The Google Places API is used to search locations and return an image, address and checks for hours of operation to see if the location is currently open for business. Simultaneously, the latitude and longitude returned by Google Places is sent to the Weather Underground API, which returns the current weather for that location. Logged in users are able to post stories they would like to share and add keywords that are clickable and connected to the Google Places API. No user authentication is required to search for content on the site. Firebase was used for the user account creation and authentication, as well as to store posted content for the site.",
+    link:"https://dry-island-51573.herokuapp.com/",
+    linkName:"View Now",
+    rutgers: true,
+    status: 2
+},
+ffc = {
+    title:"Friends of Fountain Fairview Cemetery",
+    image:"assets/images/ffc_side.jpg",
+    body:"I Was Here is a website for users to post and search for stories about travel. The stories posted on this site are complemented by 2 APIs. The Google Places API is used to search locations and return an image, address and checks for hours of operation to see if the location is currently open for business. Simultaneously, the latitude and longitude returned by Google Places is sent to the Weather Underground API, which returns the current weather for that location. Logged in users are able to post stories they would like to share and add keywords that are clickable and connected to the Google Places API. No user authentication is required to search for content on the site. Firebase was used for the user account creation and authentication, as well as to store posted content for the site.",
+    link:"https://ffcfriends.herokuapp.com/",
+    linkName:"View Now",
+    rutgers: true,
+    status: 2
+},
 audio = {
     title:"AudioTheory.com",
     image:"assets/images/audio_side.jpg",
@@ -83,6 +128,12 @@ $(document).on("ready", function(){
     $('.cover6').delay( 600 ).animate({ 'right': '-1500px', 'opacity': "0" }, 1000);
     $('.cover7').delay( 900 ).animate({ 'left': '-1000px', 'opacity': "0" }, 1000);
     $('.cover8').delay( 900 ).animate({ 'right': '-1500px', 'opacity': "0" }, 1000);
+    $('.cover9').delay( 1200 ).animate({ 'left': '-1000px', 'opacity': "0" }, 1000);
+    $('.cover10').delay( 1200 ).animate({ 'right': '-1500px', 'opacity': "0" }, 1000);
+    $('.cover11').delay( 1500 ).animate({ 'left': '-1000px', 'opacity': "0" }, 1000);
+    $('.cover12').delay( 1500 ).animate({ 'right': '-1500px', 'opacity': "0" }, 1000);
+    $('.cover13').delay( 1800 ).animate({ 'left': '-1000px', 'opacity': "0" }, 1000);
+    $('.cover14').delay( 1800 ).animate({ 'right': '-1500px', 'opacity': "0" }, 1000);
     $('.rutgers').animate({ 'opacity': 100 }, 30000);
     $('.adam-icon').animate({ 'opacity': 100 }, 30000);
 
