@@ -88,13 +88,22 @@ scraper = {
     rutgers: true,
     status: 2
 },
+cash = {
+    title:"Cash Cache Smart Piggy Bank",
+    image:"assets/images/cash_side.jpg",
+    body:"I Was Here is a website for users to post and search for stories about travel. The stories posted on this site are complemented by 2 APIs. The Google Places API is used to search locations and return an image, address and checks for hours of operation to see if the location is currently open for business. Simultaneously, the latitude and longitude returned by Google Places is sent to the Weather Underground API, which returns the current weather for that location. Logged in users are able to post stories they would like to share and add keywords that are clickable and connected to the Google Places API. No user authentication is required to search for content on the site. Firebase was used for the user account creation and authentication, as well as to store posted content for the site.",
+    link:"https://dry-island-51573.herokuapp.com/",
+    linkName:"View Now",
+    rutgers: true,
+    status: 2
+},
 ffc = {
     title:"Friends of Fountain Fairview Cemetery",
     image:"assets/images/ffc_side.jpg",
     body:"I Was Here is a website for users to post and search for stories about travel. The stories posted on this site are complemented by 2 APIs. The Google Places API is used to search locations and return an image, address and checks for hours of operation to see if the location is currently open for business. Simultaneously, the latitude and longitude returned by Google Places is sent to the Weather Underground API, which returns the current weather for that location. Logged in users are able to post stories they would like to share and add keywords that are clickable and connected to the Google Places API. No user authentication is required to search for content on the site. Firebase was used for the user account creation and authentication, as well as to store posted content for the site.",
     link:"https://ffcfriends.herokuapp.com/",
     linkName:"View Now",
-    rutgers: true,
+    rutgers: false,
     status: 2
 },
 audio = {
