@@ -55,7 +55,7 @@ travel = {
 friend = {
     title:"Friend Finder Survey",
     image:"assets/images/finder_side.jpg",
-    body:"I Was Here is a website for users to post and search for stories about travel. The stories posted on this site are complemented by 2 APIs. The Google Places API is used to search locations and return an image, address and checks for hours of operation to see if the location is currently open for business. Simultaneously, the latitude and longitude returned by Google Places is sent to the Weather Underground API, which returns the current weather for that location. Logged in users are able to post stories they would like to share and add keywords that are clickable and connected to the Google Places API. No user authentication is required to search for content on the site. Firebase was used for the user account creation and authentication, as well as to store posted content for the site.",
+    body:"Friend Finder is an app that matches users based on scores from a 10 question survey. This application is powered by Node, Express, and uses an MVC file structure. Rapid development of this application was facilitated with the front-end-framework, Bootstrap. This Rutgers assignment did not require the collected data to be persistent. Data entered during the survey is temporarily stored in an array of object literals. The logic for this app could easily be expanded upon and work well for an online dating site.",
     link:"https://friend-finder-survey.herokuapp.com/",
     linkName:"View Now",
     rutgers: true,
@@ -64,7 +64,7 @@ friend = {
 burger = {
     title:"Eat Da Burger",
     image:"assets/images/burger_side.jpg",
-    body:"I Was Here is a website for users to post and search for stories about travel. The stories posted on this site are complemented by 2 APIs. The Google Places API is used to search locations and return an image, address and checks for hours of operation to see if the location is currently open for business. Simultaneously, the latitude and longitude returned by Google Places is sent to the Weather Underground API, which returns the current weather for that location. Logged in users are able to post stories they would like to share and add keywords that are clickable and connected to the Google Places API. No user authentication is required to search for content on the site. Firebase was used for the user account creation and authentication, as well as to store posted content for the site.",
+    body:'This simplistic application has more going on under the hood than you might expect. Eat Da Burger is powered by Node, Express, Handlebars, jQuery, MySQL, ORM for database queries, and an MVC file structure. Those of you who have played the NES game "Burger Time" will especially enjoy the intro animation. This application supplied much of the starting code for my most feature packed and robust project (Endeavor) in the entire Rutgers certification program.',
     link:"/burger",
     linkName:"View Now",
     rutgers: true,
