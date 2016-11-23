@@ -1,7 +1,7 @@
 var hangman = {
     title:"Star Trek Hangman Game",
     image:"assets/images/hangman_side.jpg",
-    body:"This was the first JavaScript project I had for the Rutgers Coding Boot Camp. I am particularly proud of the way the final product came together. The languages used to create this game were HTML5, CSS3 & JavaScript. Event listeners in the JavaScript code were the key to making the videos and game function so well together. They allow for the timimg of the user's inputs to be unpredictable without the overlapping of videos. I hope that you enjoy playing this game as much as I enjoyed programming it.",
+    body:"This was the first JavaScript project I had for the Rutgers Coding Bootcamp. I am particularly proud of the way the final product came together. The languages used to create this game were HTML5, CSS3 & JavaScript. Event listeners in the JavaScript code were the key to making the videos and game function so well together. They allow for the timimg of the user's inputs to be unpredictable without the overlapping of videos. I hope that you enjoy playing this game as much as I enjoyed programming it.",
     link:"/hangman",
     linkName:"Play Now",
     rutgers: true,
@@ -10,7 +10,7 @@ var hangman = {
 rpg = {
     title:"Star Wars RPG Game",
     image:"assets/images/rpg_side.jpg",
-    body:"This was the first jQuery project I had for the Rutgers Coding Boot Camp. The characters in the game all have a different combination of health, attack & counterattack attributes. Every time a character attacks, their health increases by its base number. The strategy of this game is to initially attack opponents that have the lowest counterattack. This allows you to build up your attack power before attacking the stronger opponents. The languages used to create this game were HTML5, CSS3, jQuery & JavaScript. The movement of characters was done by adding and removing CSS3 classes via jQuery while certain conditions exist. The jQuery animate capability was used to display the character's calculated health in the lightsaber health meter.",
+    body:"This was the first jQuery project I had for the Rutgers Coding Bootcamp. The characters in the game all have a different combination of health, attack & counterattack attributes. Every time a character attacks, their health increases by its base number. The strategy of this game is to initially attack opponents that have the lowest counterattack. This allows you to build up your attack power before attacking the stronger opponents. The languages used to create this game were HTML5, CSS3, jQuery & JavaScript. The movement of characters was done by adding and removing CSS3 classes via jQuery while certain conditions exist. The jQuery animate capability was used to display the character's calculated health in the lightsaber health meter.",
     link:"/rpg",
     linkName:"Play Now",
     rutgers: true,
@@ -65,7 +65,7 @@ burger = {
     title:"Eat Da Burger",
     image:"assets/images/burger_side.jpg",
     body:'This simplistic application has more going on under the hood than you might expect. Eat Da Burger is powered by Node, Express, Handlebars, jQuery, MySQL, ORM for database queries, and an MVC file structure. Those of you who have played the NES game "Burger Time" will especially enjoy the intro animation. This application supplied much of the starting code for my most feature packed and robust project (Endeavor) in the entire Rutgers certification program.',
-    link:"/burger",
+    link:"https://eat-da-burger-app.herokuapp.com/",
     linkName:"View Now",
     rutgers: true,
     status: 2
@@ -100,7 +100,7 @@ cash = {
 ffc = {
     title:"Friends of Fountain Fairview Cemetery",
     image:"assets/images/ffc_side.jpg",
-    body:"Friends of Fountain Fairview Cemetery is a benevolent society dedicated to preserving and promoting the unique heritage of the Fountain Fairview Cemetery. I created this site as a volunteer to help this organization have an online presence capable of reaching a larger audience. This site was built with administrator capabilities for adding new content and by the organization. This is done very simply by the owner and gives them total dynamic control over the content displayed on their site.",
+    body:"Friends of Fountain Fairview Cemetery is a benevolent society dedicated to preserving and promoting the unique heritage of the Fountain Fairview Cemetery. I created this site as a volunteer to help this organization have an online presence capable of reaching a larger audience. This site was built with administrator capabilities for adding new content by the organization. This is done very simply by the owner and gives them total dynamic control over the content displayed on their site.",
     link:"https://ffcfriends.herokuapp.com/",
     linkName:"View Now",
     rutgers: false,
