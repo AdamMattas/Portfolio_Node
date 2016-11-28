@@ -46,9 +46,12 @@ router.post('/contact/submit', function(req, res){
   });
 
   sg.API(request, function(error, response) {
-    console.log(response.statusCode);
+    console.log('Response', response.statusCode);
     console.log(response.body);
     console.log(response.headers);
+    if (response.statusCode == 202) {
+      res.redirect('/contact'); 
+    }
   });
 
   // sendgrid.send({
