@@ -47,8 +47,7 @@ router.post('/contact/submit', function(req, res) {
     console.log(response.body);
     console.log(response.headers);
     if (response.statusCode == 202) {
-      // res.redirect('/contact');
-      res.send('SUCCESS!')
+      res.redirect('/contact'); 
     }
   });
 });
