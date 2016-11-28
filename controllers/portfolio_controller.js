@@ -34,7 +34,7 @@ router.post('/contact/submit', function(req, res){
   var helper = require('sendgrid').mail;
   var from_email = new helper.Email(req.body.email);
   var to_email = new helper.Email('adamfader@gmail.com');
-  var subject = req.body.sender;
+  var subject = 'AdamMattas.com Portfolio Contact From ' + req.body.sender;
   var content = new helper.Content('text/plain', req.body.message);
   var mail = new helper.Mail(from_email, subject, to_email, content);
 
