@@ -4,6 +4,7 @@ Here is where you create all the functions that will do the routing for your app
 var express = require('express');
 var router = express.Router();
 var path = require('path');
+var grid = require('sendgrid_controller.js');
 //var portfolio = require('../models/portfolio.js');
 
 // redirects user to /burgers
@@ -31,22 +32,9 @@ router.post('/contact/submit', function(req, res){
   // burger.create(['burger_name'], [req.body.burger_name], function () {
   //   res.redirect('/burgers');
   // });
-  var helper = require('sendgrid').mail;
-  var from_email = new helper.Email(req.body.email);
-  var to_email = new helper.Email('adamfader@gmail.com');
-  var subject = 'AdamMattas.com Portfolio Contact From ' + req.body.sender;
-  var content = new helper.Content('text/plain', req.body.message);
-  var mail = new helper.Mail(from_email, subject, to_email, content);
 
-  var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-  var request = sg.emptyRequest({
-    method: 'POST',
-    path: '/v3/mail/send',
-    body: mail.toJSON(),
-  });
-
-  sg.API(request, function(error, response) {
-    console.log('Response', response.statusCode);
+  grid.sg.API(request, function(error, response) {
+    console.log(response.statusCode);
     console.log(response.body);
     console.log(response.headers);
     if (response.statusCode == 202) {
