@@ -1,7 +1,7 @@
 var hangman = {
     title:"Star Trek Hangman Game",
     image:"assets/images/hangman_side.jpg",
-    body:"This was the first JavaScript project I had for the Rutgers Coding Bootcamp. I am particularly proud of the way the final product came together. The languages used to create this game were HTML5, CSS3 & JavaScript. Event listeners in the JavaScript code were the key to making the videos and game function so well together. They allow for the timimg of the user's inputs to be unpredictable without the overlapping of videos. I hope that you enjoy playing this game as much as I enjoyed programming it.",
+    body:"This was the first JavaScript project I had for the Rutgers Coding Bootcamp. I am particularly proud of the way the final product came together. The languages used to create this game were HTML5, CSS3 & JavaScript. Event listeners in the JavaScript code were the key to making the videos and game function so well together. They allow for the timing of the user's inputs to be unpredictable without the overlapping of videos. I hope that you enjoy playing this game as much as I enjoyed programming it.",
     link:"/hangman",
     linkName:"Play Now",
     rutgers: true,

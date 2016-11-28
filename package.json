@@ -22,6 +22,7 @@
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.6",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sendgrid": "^4.7.1"
   }
 }
