@@ -22,6 +22,36 @@ a:hover{
 	text-decoration: none;
 }
 
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #222222;
+}
+
+.navbar-collapse {
+	border-top: none;
+}
+
+#navbar-main ul li a:hover {
+ background-color: #000000;
+}
+
+.navbar-collapse.collapse.in {
+	margin-top: 5px;
+}
+
+.navbar-collapse.collapse.in ul li a {
+ background-color: #222222;
+}
+
+.collapsing {
+	background-color: #222222;	
+}
+
+.nav-link-active {
+	color: #055c98 !important;
+	font-weight: 500;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
+}
+
 .hide{
 	display: none;
 }
