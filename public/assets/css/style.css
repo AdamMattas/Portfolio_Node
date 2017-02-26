@@ -3,6 +3,12 @@
   margin: 0;
 }
 
+.api-input:focus {
+    outline: none !important;
+    border:1px solid #055c98;
+    box-shadow: 0 0 10px #055c98;
+}
+
 p{
 	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 	color: #777777;
@@ -501,8 +507,8 @@ a:hover{
 
 .api-restore:hover{
 	background-color: #ffffff;
-	color: #000000;
-	border: 1px solid #000000;
+	color: #222222;
+	border: 1px solid #222222;
 	border-radius: 5px;
 }
 

@@ -442,6 +442,7 @@ $(document).on('ready', function(){
 
         var sideText = $('<input>'); //creates a new input element
         sideText.attr('id', apiName.id); //adds an id to input
+        sideText.attr('autofocus'); //adds an id to input
         sideText.attr('type', 'text'); //adds text type to input
         sideText.addClass('form-control api-input'); //adds classes to input element
         sideText.attr('placeholder', apiName.placeholder); //adds text from object
@@ -468,6 +469,7 @@ $(document).on('ready', function(){
         $('#api-hidable').hide();
 
         $('#api-listen').prepend(sideDiv);//prepends dynamic element to listen div
+        $('#api-listen input').focus();
 
     }); // End of api selection
 
