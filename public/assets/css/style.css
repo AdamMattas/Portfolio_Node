@@ -35,15 +35,21 @@ a:hover{
 }
 
 .navbar-collapse.collapse.in {
-	margin-top: 5px;
+	margin-top: 12px;
+	background-color: #222222;
 }
 
-.navbar-collapse.collapse.in ul li a {
- background-color: #222222;
-}
+/*.navbar-collapse.collapse.in ul{
+	padding-top: 7px;
+}*/
+
+/*.navbar-collapse.collapse.in ul li a {
+ border-bottom: 1px solid #055c98;
+}*/
 
 .collapsing {
-	background-color: #222222;	
+	margin-top: 12px;
+	background-color: #222222;
 }
 
 .nav-link-active {
