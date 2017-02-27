@@ -43,6 +43,7 @@ a:hover{
 .navbar-collapse.collapse.in {
 	margin-top: 12px;
 	background-color: #222222;
+	border-bottom: 1px solid #055c98;
 }
 
 /*.navbar-collapse.collapse.in ul{
@@ -56,6 +57,42 @@ a:hover{
 .collapsing {
 	margin-top: 12px;
 	background-color: #222222;
+}
+
+.dropdown-menu {
+	position: relative;
+	top: 14px;
+	float: none;
+	margin: 47px 0px 0px 165px;
+	text-align: right;
+	background-color: #222222;
+	border: 1px solid #055c98;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+		position: relative;
+		top: 0px;
+		float: none;
+		margin: 0px 0px 0px 0px;
+		text-align: left;
+		background-color: #222222;
+		border: none;
+	}
+}
+
+.dropdown-menu > li > a {
+	color: #ffffff;
+}
+
+@media (max-width: 768px) {
+	.dropdown-menu > li {
+		list-style: square;	
+		margin-left: 33px;
+	}
+	.dropdown-menu > li > a {
+		padding: 5px 5px;
+	}
 }
 
 .nav-link-active {
@@ -195,6 +232,7 @@ a:hover{
   
   -webkit-flex-flow: row wrap;
   justify-content: space-between;
+	/*flex-wrap: wrap;*/
 }
 
 .icon-social{
