@@ -134,7 +134,7 @@ h3{
 /*main background image*/
 .back-pic{
 	position: relative;
-  background: url(../images/simp_back.png) no-repeat;
+  background: url(../images/simp_back_new.png) no-repeat;
   background-size: cover;
   min-height: 100%;
   min-width: 1024px;
