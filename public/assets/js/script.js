@@ -81,7 +81,7 @@ endeavor = {
 },
 scraper = {
     title:"CNN Scraper",
-    image:"assets/images/scraper_side.jpg",
+    image:"assets/images/scraper_side_new.jpg",
     body:"CNN Scraper is an app that searches the world politics section of CNN.com for articles and stores them in a database. Stored articles are then displayed on the application and can be cycled through. In addition to storing the articles, any app user can post comments on any of the articles. The comments are then stored in the database along with the date and time. Party affiliation is also posted to provide further insight regarding a poster and their comments. Every time the app is loaded, a new article scrape of CNN.com is performed. If a new article is found it is immediately stored. If the article already exists, it is not duplicated in the database. CNN Scraper is powered by Node, Express, Handlebars, Cheerio, Request, Moment, Mongoose, and MongoDB. The slideshow used to cycle through the stored articles was made with jQuery and comment posts are sent using AJAX.",
     link:"https://dry-island-51573.herokuapp.com/",
     linkName:"View Now",
