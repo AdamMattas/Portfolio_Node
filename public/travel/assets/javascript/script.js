@@ -32,10 +32,10 @@ $(document).on('ready', function(){
         userName = snapshot.val().username;
 
         var userBtn = $('<a>').text(userName); //create a <a> with a textnode of the username
-          userBtn.addClass('btn btn-primary user'); //added classes for link
+          userBtn.addClass('user'); //added classes for link
           userBtn.attr('href', 'user.html'); //added href attribute
 
-          $('#nav-logged').prepend(userBtn);//prepends image to navigation bar
+          $('#nav-logged').append(userBtn);//prepends image to navigation bar
       }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
       });
@@ -216,14 +216,14 @@ $(document).on('ready', function(){
   });
 
     //listens for input click on search bar
-	$('#search').on('focus', function(){
-		$('.search-cover').addClass('no-height');
-	});
+    $('#search').on('focus', function(){
+      $('#search').addClass('yes-height');
+    });
 
     //listens for click outside of search bar
-	$('#search').on('blur', function(){
-		$('.search-cover').removeClass('no-height');
-	});
+    $('#search').on('blur', function(){
+      $('#search').removeClass('yes-height');
+    });
 
   function renderSearch(search, name, location, type, wholeResponse){
 
