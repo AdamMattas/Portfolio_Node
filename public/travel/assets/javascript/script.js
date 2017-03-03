@@ -48,7 +48,7 @@ $(document).on('ready', function(){
   }
 
   //check if current page is user.html
-  if(window.location.href === "http://localhost:3000/travel/user.html") {
+  if(window.location.href === "http://www.adammattas.com/travel/user.html" || window.location.href === "http://localhost:3000/travel/user.html") {
     //check if user is logged in
     if(authData !== null){ //checks to see if client is authenticated
 
