@@ -298,7 +298,7 @@ $(document).on('ready', function(){
 
       var key = "cbd1ecb89687e74e";
       
-      var queryURL = "https://crossorigin.me/http://api.wunderground.com/api/" + key +/*Your_Key*/"/conditions/q/" + latitude + "," + longitude + ".json";
+      var queryURL = "http://api.wunderground.com/api/" + key +/*Your_Key*/"/conditions/q/" + latitude + "," + longitude + ".json";
 
         //ajax request and returns
         $.ajax({url: queryURL, method: 'GET'})
