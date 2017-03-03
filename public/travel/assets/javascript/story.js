@@ -134,7 +134,7 @@ $(document).on('ready', function(){
     var searchHours = "";
 
     //query string for api that includes search parameter
-    var queryURL = "https://crossorigin.me/https://maps.googleapis.com/maps/api/place/textsearch/json?query="+ term +"&key=AIzaSyCQMIrfC5T4I3TSO_avZHcEe2Uuwe9zViM";
+    var queryURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="+ term +"&key=AIzaSyCQMIrfC5T4I3TSO_avZHcEe2Uuwe9zViM";
 
     //ajax makes request and returns the response
     $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
@@ -173,7 +173,7 @@ $(document).on('ready', function(){
     var searchHours = "";
 
     //query string for api that includes search parameter
-    var queryURL = "https://crossorigin.me/https://maps.googleapis.com/maps/api/place/textsearch/json?query="+ term +"&key=AIzaSyCQMIrfC5T4I3TSO_avZHcEe2Uuwe9zViM";
+    var queryURL = "https://maps.googleapis.com/maps/api/place/textsearch/json?query="+ term +"&key=AIzaSyCQMIrfC5T4I3TSO_avZHcEe2Uuwe9zViM";
 
     //ajax makes request and returns the response
     $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
@@ -203,7 +203,7 @@ $(document).on('ready', function(){
 
     function deepQuery2(firstQuery){
 
-        var secondQuery = "https://crossorigin.me/https://maps.googleapis.com/maps/api/place/details/json?placeid="+ firstQuery +"&key=AIzaSyCQMIrfC5T4I3TSO_avZHcEe2Uuwe9zViM";
+        var secondQuery = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+ firstQuery +"&key=AIzaSyCQMIrfC5T4I3TSO_avZHcEe2Uuwe9zViM";
 
         $.ajax({url: secondQuery, method: 'GET'}).done(function(deepResponse) {
             
@@ -228,7 +228,7 @@ $(document).on('ready', function(){
                   a.attr('target', '_blank');
 
                   var searchImage = $('<img>'); //creates a new image element
-                  searchImage.attr('src', "https://crossorigin.me/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+ deepResponse.result.photos[0].photo_reference +"&key=AIzaSyCQMIrfC5T4I3TSO_avZHcEe2Uuwe9zViM"); //added src attribut from google
+                  searchImage.attr('src', "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+ deepResponse.result.photos[0].photo_reference +"&key=AIzaSyCQMIrfC5T4I3TSO_avZHcEe2Uuwe9zViM"); //added src attribut from google
                   searchImage.addClass('story-image'); //added class to image
 
                   var searchTitle = $('<h2>'); //creates a h2 element
