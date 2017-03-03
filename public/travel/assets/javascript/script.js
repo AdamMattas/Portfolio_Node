@@ -227,7 +227,7 @@ $(document).on('ready', function(){
 
   function renderSearch(search, name, location, type, wholeResponse){
 
-    var queryPic = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+ search +"&key=AIzaSyCQMIrfC5T4I3TSO_avZHcEe2Uuwe9zViM";
+    var queryPic = "https://crossorigin.me/https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+ search +"&key=AIzaSyCQMIrfC5T4I3TSO_avZHcEe2Uuwe9zViM";
     $('#api-hours').empty();
     $('#api-image').attr('src', queryPic);
     $('#api-title').text(name);

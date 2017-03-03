@@ -95,7 +95,7 @@ h3{
   /*width: 100%;*/
   width: calc(100% - 70px);
   height: 130px;
-	background-image: url("../images/006.jpg");
+	background-image: url("../images/007.jpg");
 	background-size: cover;
 	background-position: right;
   z-index: 99;
@@ -110,7 +110,7 @@ h3{
   z-index: 101; 
 }
 
-.logo2{
+.logo2 {
   position: absolute;
   top: 42px;
   left: 54px;
@@ -120,17 +120,27 @@ h3{
   z-index: 101;  
 }
 
-.divider{
+.divider {
   position: absolute;
   top: 10px;
   right: 73px;
   width: 35px;
   height: 85px;
-  background-image: url("../images/divider3.png");
-  z-index: 102;  
+  background-image: url("../images/divider5.png");
+  z-index: 103;  
 }
 
-.login{
+.divider-continued {
+  position: absolute;
+  top: 0px;
+  right: 85px;
+  width: 22px;
+  height: 34px;
+  background-image: url("../images/divider4.png");
+  z-index: 103;  
+}
+
+.login {
   position: absolute;
   top: 10px;
   right: 0px;
@@ -281,7 +291,7 @@ h3{
   -moz-transition: all 0.7s ease-in-out;
   -o-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
-  z-index: 9105;
+  z-index: 102;
 }
 
 /*.search-cover{
@@ -336,8 +346,10 @@ h3{
 /*end bootstrap search*/
 
 .black{
-  background-color: #000000;
-  border: 1px solid #000000;
+  background-color: transparent;
+  /*border: 1px solid #000000;*/
+  border: none;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
 }
 
 .black:hover{
@@ -364,6 +376,7 @@ h3{
   /* border: 1px solid #000000; */
   border-left: 10px solid #000000;
   /*border-right: 10px solid #000000;*/
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
   z-index: 99;
 }
 
@@ -412,6 +425,7 @@ h3{
   /* border: 1px solid #000000; */
   border-left: 10px solid #000000;
   border-right: 10px solid #000000;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
   z-index: 99;
 }
 
@@ -460,6 +474,7 @@ h3{
   /* border: 1px solid #000000; */
   border-left: 10px solid #000000;
   /*border-right: 10px solid #000000;*/
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
   z-index: 99;
 }
 
