@@ -151,11 +151,11 @@ h3{
   z-index: 101;
 }
 
-.login:hover{
+.login:hover {
   background-image: url("../images/login2.png");
 }
 
-.logout{
+.logout {
   position: absolute;
   top: 10px;
   right: 0px;
@@ -166,7 +166,7 @@ h3{
   z-index: 101;
 }
 
-.logout:hover{
+.logout:hover {
   background-image: url("../images/logout1.png");
 }
 
@@ -180,7 +180,7 @@ h3{
   z-index: 99;
 }*/
 
-.world{
+.world {
   background-image: url("../images/world3.png");
   position: absolute;
   top: -35px;
@@ -190,7 +190,7 @@ h3{
   z-index: 100;
 }
 
-.search-area{
+.search-area {
   position: relative;
   width: 100%;
   height: 50px;
@@ -204,33 +204,33 @@ h3{
   margin-bottom: 120px;
 }
 
-.main-content-wrapper{
+.main-content-wrapper {
   width: 80%;
   margin: 0 auto;
   clear: both;
 }
 
-.extra-bottom{
+.extra-bottom {
   margin-bottom: 126px !important;
 }
 
-.content-wrapper{
+.content-wrapper {
   width: 90%;
   margin: 0 auto;
 }
 
-.btn-primary{
+.btn-primary {
   background-color: #022455;
   border-color: #022455;
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
 }
 
-.btn{
+.btn {
   /*margin-top: 2px;*/
 }
 
-.right{
+.right {
   float: right;
   position: relative;
 }
@@ -282,7 +282,7 @@ h3{
   z-index: 102;
 }
 
-.search:hover #search{
+.search:hover #search {
   opacity: 1;
 }
 
@@ -319,7 +319,6 @@ h3{
 
 .black{
   background-color: transparent;
-  /*border: 1px solid #000000;*/
   border: none;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
   color: #ffffff;
@@ -328,29 +327,16 @@ h3{
   padding: 3px 17px 3px 17px;
   font-size: 14pt;
   right: 0;
-  /* border: 1px solid #000000; */
   border-radius: 0px;
   z-index: 100;
 }
 
 .black:hover, .black:active:focus, .black:focus, .black:visited, .black:active {
-  background-color: rgba(165, 8, 10, .75);
+  background-color: rgba(203, 2, 2, .75);
   border: none !important;
   outline: none;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
-  /*background-color: #000000; */
-  /*border: 1px solid #000000; */
 }
-
-/*.black:active:focus{
-  background-color: #000000; 
-  border: 1px solid #000000;  
-}
-
-.black:visited{
-  background-color: #000000; 
-  border: 1px solid #000000;  
-}*/
 
 .about{
   position: relative;
@@ -358,46 +344,20 @@ h3{
   float: right;
   padding: 3px 20px 3px 20px;
   font-size: 19px;
-  /* border: 1px solid #000000; */
-  border-left: 10px solid #000000;
-  /*border-right: 10px solid #000000;*/
+  border-left: 2px solid #000000;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
   z-index: 99;
 }
 
-.about:hover{
+.about:hover, .about:active:focus, .about:visited{
   position: relative;
   color: #ffffff;
   float: right;
   padding: 3px 20px 3px 20px;
   font-size: 19px;
-  /* border: 1px solid #000000; */
-  border-left: 10px solid #000000;
-  background-color: rgba(165, 8, 10, .75);
-  z-index: 99;
-}
-
-.about:active:focus{
-  position: relative;
-  color: #ffffff;
-  float: right;
-  padding: 3px 20px 3px 20px;
-  font-size: 19px;
-  /* border: 1px solid #000000; */
-  border-left: 10px solid #000000;
-  /*border-right: 10px solid #000000;*/
-  z-index: 99;
-}
-
-.about:visited{
-  position: relative;
-  color: #ffffff;
-  float: right;
-  padding: 3px 20px 3px 20px;
-  font-size: 19px;
-  /* border: 1px solid #000000; */
-  border-left: 10px solid #000000;
-  /*border-right: 10px solid #000000;*/
+  text-decoration: none;
+  border-left: 2px solid #000000;
+  background-color: rgba(203, 2, 2, .75);
   z-index: 99;
 }
 
@@ -407,47 +367,22 @@ h3{
   float: right;
   padding: 3px 20px 3px 20px;
   font-size: 19px;
-  /* border: 1px solid #000000; */
-  border-left: 10px solid #000000;
-  border-right: 10px solid #000000;
+  border-left: 2px solid #000000;
+  border-right: 2px solid #000000;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
   z-index: 99;
 }
 
-.home:hover{
+.home:hover, .home:active:focus, .home:visited {
   position: relative;
   color: #ffffff;
   float: right;
   padding: 3px 20px 3px 20px;
   font-size: 19px;
-  /* border: 1px solid #000000; */
-  border-left: 10px solid #000000;
-  border-right: 10px solid #000000;
-  background-color: rgba(165, 8, 10, .75);
-  z-index: 99;
-}
-
-.home:active:focus{
-  position: relative;
-  color: #ffffff;
-  float: right;
-  padding: 3px 20px 3px 20px;
-  font-size: 19px;
-  /* border: 1px solid #000000; */
-  border-left: 10px solid #000000;
-  border-right: 10px solid #000000;
-  z-index: 99;
-}
-
-.home:visited{
-  position: relative;
-  color: #ffffff;
-  float: right;
-  padding: 3px 20px 3px 20px;
-  font-size: 19px;
-  /* border: 1px solid #000000; */
-  border-left: 10px solid #000000;
-  border-right: 10px solid #000000;
+  text-decoration: none;
+  border-left: 2px solid #000000;
+  border-right: 2px solid #000000;
+  background-color: rgba(203, 2, 2, .75);
   z-index: 99;
 }
 
@@ -457,47 +392,20 @@ h3{
   float: right;
   padding: 3px 20px 3px 20px;
   font-size: 19px;
-  /* border: 1px solid #000000; */
-  border-left: 10px solid #000000;
-  /*border-right: 10px solid #000000;*/
+  border-left: 2px solid #000000;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
   z-index: 99;
 }
 
-.user:hover{
+.user:hover, .user:active:focus, .user:visited {
   position: relative;
   color: #ffffff;
   float: right;
   padding: 3px 20px 3px 20px;
   font-size: 19px;
-  /* border: 1px solid #000000; */
-  border-left: 10px solid #000000;
-  /*border-right: 10px solid #000000;*/
-  background-color: rgba(165, 8, 10, .75);
-  z-index: 99;
-}
-
-.user:active:focus{
-  position: relative;
-  color: #ffffff;
-  float: right;
-  padding: 3px 20px 3px 20px;
-  font-size: 19px;
-  /* border: 1px solid #000000; */
-  border-left: 10px solid #000000;
-  /*border-right: 10px solid #000000;*/
-  z-index: 99;
-}
-
-.user:visited{
-  position: relative;
-  color: #ffffff;
-  float: right;
-  padding: 3px 20px 3px 20px;
-  font-size: 19px;
-  /* border: 1px solid #000000; */
-  border-left: 10px solid #000000;
-  /*border-right: 10px solid #000000;*/
+  text-decoration: none;
+  border-left: 2px solid #000000;
+  background-color: rgba(203, 2, 2, .75);
   z-index: 99;
 }
 
