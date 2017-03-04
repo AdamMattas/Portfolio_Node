@@ -58,12 +58,9 @@ h3{
 }
 
 .header{
-  /*background-color: #000000;*/
-  /*padding: 10px 0px 10px 0px; */
   position: absolute;
   right: 0px;
   width: calc(100% - 70px);
-  /* border-left: 70px solid #ffffff; */
   border-top: 10px solid #000000;
   border-bottom: 10px solid #000000;
   z-index: 100;
@@ -92,7 +89,6 @@ h3{
   position: absolute;
   top: 9px;
   right: 0px;
-  /*width: 100%;*/
   width: calc(100% - 70px);
   height: 130px;
 	background-image: url("../images/007.jpg");
@@ -135,7 +131,7 @@ h3{
   top: 0px;
   right: 85px;
   width: 22px;
-  height: 34px;
+  height: 35px;
   background-image: url("../images/divider4.png");
   z-index: 103;  
 }
@@ -197,7 +193,9 @@ h3{
   float: right;
 }
 
-.inner{
+.inner {
+  position: relative;
+  top: -1px;
   width: 100%;
   height: 40px;
   float: right;
@@ -241,7 +239,7 @@ h3{
 
 .img-hider {
   position: relative;
-  height: 34px;
+  height: 35px;
   min-width: 1%;
   background-color: #ffffff;
   /*border: 1px solid red;*/
@@ -267,7 +265,7 @@ h3{
   /*top: 1px;*/
   width: 280px;
   margin-left: 0px;
-  height: 34px;
+  height: 35px;
   opacity: 0;
   color: #000000;
   font-size: 18px;
@@ -298,7 +296,7 @@ h3{
 .btn {
   height: 34px;
   position: absolute;
-  padding: 3px 17px 3px 17px;
+  padding: 4px 17px 4px 17px;
   font-size: 14pt;
   right: 0;
   /*border: 1px solid #000000;*/
@@ -322,9 +320,9 @@ h3{
   border: none;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
   color: #ffffff;
-  height: 34px;
+  height: 35px;
   position: absolute;
-  padding: 3px 17px 3px 17px;
+  padding: 4px 17px 4px 17px;
   font-size: 14pt;
   right: 0;
   border-radius: 0px;
@@ -342,7 +340,7 @@ h3{
   position: relative;
   color: #ffffff;
   float: right;
-  padding: 3px 20px 3px 20px;
+  padding: 4px 20px 4px 20px;
   font-size: 19px;
   border-left: 2px solid #000000;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
@@ -353,7 +351,7 @@ h3{
   position: relative;
   color: #ffffff;
   float: right;
-  padding: 3px 20px 3px 20px;
+  padding: 4px 20px 4px 20px;
   font-size: 19px;
   text-decoration: none;
   border-left: 2px solid #000000;
@@ -365,7 +363,7 @@ h3{
   position: relative;
   color: #ffffff;
   float: right;
-  padding: 3px 20px 3px 20px;
+  padding: 4px 20px 4px 20px;
   font-size: 19px;
   border-left: 2px solid #000000;
   border-right: 2px solid #000000;
@@ -377,7 +375,7 @@ h3{
   position: relative;
   color: #ffffff;
   float: right;
-  padding: 3px 20px 3px 20px;
+  padding: 4px 20px 4px 20px;
   font-size: 19px;
   text-decoration: none;
   border-left: 2px solid #000000;
@@ -390,7 +388,7 @@ h3{
   position: relative;
   color: #ffffff;
   float: right;
-  padding: 3px 20px 3px 20px;
+  padding: 4px 20px 4px 20px;
   font-size: 19px;
   border-left: 2px solid #000000;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
@@ -401,7 +399,7 @@ h3{
   position: relative;
   color: #ffffff;
   float: right;
-  padding: 3px 20px 3px 20px;
+  padding: 4px 20px 4px 20px;
   font-size: 19px;
   text-decoration: none;
   border-left: 2px solid #000000;
@@ -439,11 +437,9 @@ h3{
   width: 100%;
   height: auto;
   border: 2px solid #000000;
-  /*border-radius: 10px;*/
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  /* box-shadow */
   -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
   -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
   box-shadow: rgba(0,0,0,0.8) 0 0 10px;
@@ -455,11 +451,9 @@ h3{
   width: 100%;
   height: auto;
   border: 2px solid #000000;
-  /*border-radius: 10px;*/
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  /* box-shadow */
   -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
   -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
   box-shadow: rgba(0,0,0,0.8) 0 0 10px;
@@ -578,8 +572,9 @@ h3{
   background-image: url("../images/postcards_final.png");
   background-size: cover;
   width: 100%;
-  height: 150px;
+  height: 255px;
   /*opacity: 0.75;*/
+  overflow: hidden;
   clear: both;
 }
 
