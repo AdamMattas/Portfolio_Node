@@ -262,18 +262,6 @@ h3{
   z-index: 105;
 }
 
-/*.search input {
-  position: absolute;
-  width: 375px;
-  margin-left: 0px;
-  height: 35px;
-  line-height: 18px;
-  padding: 0 2px 0 2px;
-  border-radius:1px;
-  background-color: transparent;
-  z-index: 99;
-}*/
-
 .search input {
   position: absolute;
   /*top: 1px;*/
@@ -293,22 +281,6 @@ h3{
   transition: all 0.7s ease-in-out;
   z-index: 102;
 }
-
-/*.search-cover{
-  background-image: url("../images/search-pic.png");
-  width: 281px;
-  height: 35px;
-  position: absolute;
-  border: 1px solid #000000;
-  background-color: #000000;
-  color: #ffffff;
-  text-align: center;
-  -webkit-transition: all 0.7s ease-in-out;
-  -moz-transition: all 0.7s ease-in-out;
-  -o-transition: all 0.7s ease-in-out;
-  transition: all 0.7s ease-in-out;
-  z-index: 100;
-}*/
 
 .search:hover #search{
   opacity: 1;
@@ -350,14 +322,27 @@ h3{
   /*border: 1px solid #000000;*/
   border: none;
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
+  color: #ffffff;
+  height: 34px;
+  position: absolute;
+  padding: 3px 17px 3px 17px;
+  font-size: 14pt;
+  right: 0;
+  /* border: 1px solid #000000; */
+  border-radius: 0px;
+  z-index: 100;
 }
 
-.black:hover{
-  background-color: #000000; 
-  border: 1px solid #000000; 
+.black:hover, .black:active:focus, .black:focus, .black:visited, .black:active {
+  background-color: rgba(165, 8, 10, .75);
+  border: none !important;
+  outline: none;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1), 0px 0px 25px rgba(255, 255, 255, 1);
+  /*background-color: #000000; */
+  /*border: 1px solid #000000; */
 }
 
-.black:active:focus{
+/*.black:active:focus{
   background-color: #000000; 
   border: 1px solid #000000;  
 }
@@ -365,7 +350,7 @@ h3{
 .black:visited{
   background-color: #000000; 
   border: 1px solid #000000;  
-}
+}*/
 
 .about{
   position: relative;
@@ -388,7 +373,7 @@ h3{
   font-size: 19px;
   /* border: 1px solid #000000; */
   border-left: 10px solid #000000;
-  /*border-right: 10px solid #000000;*/
+  background-color: rgba(165, 8, 10, .75);
   z-index: 99;
 }
 
@@ -438,6 +423,7 @@ h3{
   /* border: 1px solid #000000; */
   border-left: 10px solid #000000;
   border-right: 10px solid #000000;
+  background-color: rgba(165, 8, 10, .75);
   z-index: 99;
 }
 
@@ -487,6 +473,7 @@ h3{
   /* border: 1px solid #000000; */
   border-left: 10px solid #000000;
   /*border-right: 10px solid #000000;*/
+  background-color: rgba(165, 8, 10, .75);
   z-index: 99;
 }
 
