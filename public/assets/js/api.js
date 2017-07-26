@@ -61,7 +61,8 @@ $(document).on('ready', function(){
 
         // Run an initial search to identify the artist unique Spotify ID
         var queryURL = "https://api.spotify.com/v1/search?q=" + artist + "&type=artist";
-        $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+        var headers = "Authorization: Bearer {35ab8e4dc70e4dfba691585d2ab754e2}"
+        $.ajax({url: queryURL, headers, method: 'GET'}).done(function(response) {
 
             // Logs the entire object to console
             console.log(response);
@@ -311,7 +312,7 @@ $(document).on('ready', function(){
     $(document).on('click', '#omdb-search', function() {
 
         var movie = $('#omdb-input').val().trim();
-        var queryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=full&r=json";
+        var queryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=full&apikey=4b322bb5&r=json";
         
         // Creates AJAX call for the specific movie being 
         $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
