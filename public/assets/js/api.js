@@ -98,6 +98,9 @@ $(document).on('ready', function(){
 
         // Remove main-api-panel if it exists to clear the area for fresh results
         $('.main-api-panel').remove();
+        $('#next-tube').remove();
+        $('#prev-tube').remove();
+
 
         var tubeContainer = $('<div>'); //creates a new div element
         tubeContainer.addClass('main-api-panel'); //adds classes to tubeContainer
@@ -143,7 +146,9 @@ $(document).on('ready', function(){
 
             var nextTube = $('<div>');
             nextTube.text('Next>>>');
-            nextTube.data('name', response.nextPageToken); 
+            nextTube.attr('id', 'next-tube'); //add img src from response
+            nextTube.data('name', response.nextPageToken);
+            nextTube.data('search', search); 
 
             $("#main-panel").append(nextTube);
 
@@ -153,7 +158,9 @@ $(document).on('ready', function(){
 
             var prevTube = $('<div>');
             prevTube.text('<<<Prev');
+            prevTube.attr('id', 'prev-tube'); //add img src from response
             prevTube.data('name', response.prevPageToken); 
+            prevTube.data('search', search);
 
             $("#main-panel").append(prevTube);
 
@@ -161,16 +168,29 @@ $(document).on('ready', function(){
 
     }
 
-    // // Send a new track to the Spotify player when image is clicked
-    // $(document).on('click', '.track-img', function(){
+    // Send a new track to the Spotify player when image is clicked
+    $(document).on('click', '#next-tube', function() {
 
-    //     // Track ID is stored in the image's data-id
-    //     var trackSend = $(this).data('id'); 
+        // Track ID is stored in the image's data-id
+        var nextSend = $(this).data('name');
+        var nextSearch = $(this).data('search');
 
-    //     // // Call spotifyPlayer to add a new track to the audio player
-    //     // spotifyPlayer(trackSend);
+        // // Call spotifyPlayer to add a new track to the audio player
+        getYouTubeNext(nextSend, nextSearch)
 
-    // });
+    });
+
+    // Send a new track to the Spotify player when image is clicked
+    $(document).on('click', '#prev-tube', function() {
+
+        // Track ID is stored in the image's data-id
+        var prevSend = $(this).data('name');
+        var nextSearch = $(this).data('search');
+
+        // // Call spotifyPlayer to add a new track to the audio player
+        getYouTubeNext(prevSend, nextSearch)
+
+    });
 
     // On Button Click for Artist Selection
     $(document).on('click', '#spotify-search', function(){
