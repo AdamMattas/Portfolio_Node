@@ -67,67 +67,69 @@ $(document).on('ready', function(){
             // Logs the entire object to console
             console.log('TUBE RESPONSE: ', response);
 
-            // Remove main-api-panel if it exists to clear the area for fresh results
-            $('.main-api-panel').remove();
-
-            var tubeContainer = $('<div>'); //creates a new div element
-            tubeContainer.addClass('main-api-panel'); //adds classes to tubeContainer
-
             // Store response in variable
-            // var results = trackResponse.tracks;
             var results = response.items;
 
-            // Loop through the response
-            for(var i = 0; i < results.length; i++){
-
-                var tubeWrap = $('<div>'); //creates a new div element
-                tubeWrap.addClass('track-container'); //adds classes to tubeWrap
-
-                var tubeLink = $('<a>');
-                tubeLink.attr('href', 'https://www.youtube.com/watch?v=' + results[i].id.videoId);
-
-                var tubeImg = $('<img>'); //creates a new img element
-                tubeImg.attr('src', results[i].snippet.thumbnails.medium.url); //add img src from response
-                tubeImg.data('id', results[i].id.videoId); //add data-id from results track id
-                tubeImg.addClass('track-img'); //add track-img class to img element
-
-                var tubeTitle = $('<h4>'); //creates a new p element
-                tubeTitle.text(results[i].snippet.title); //creates text node with album name
-
-                var tubeDesc = $('<p>'); //creates a new p element
-                tubeDesc.text(results[i].snippet.description); //creates text node with album name
-
-                tubeWrap.append(tubeLink); //append tubeImg to tubeWrap
-                tubeLink.append(tubeImg); //append tubeImg to tubeWrap
-                tubeLink.append(tubeTitle); //append tubeTitle to tubeWrap
-                tubeLink.append(tubeDesc); //append tubeTitle to tubeWrap
-
-                tubeContainer.append(tubeWrap); //append tubeWrap to tracksContainer
-
-            }
-
-            // Hide about Adam content
-            $("#main-hidable").hide();
-
-            // Appends the new dynamic content to main-panel div
-            $("#main-panel").append(tubeContainer);
-
-            // // Call spotifyPlayer to add a new track to the audio player
-            // spotifyPlayer(trackResponse.tracks[0].id);
+            buildTubeResults(results);
 
         });     
-    } // End of getArtistTrack function
+    } // End of getYouTube function
 
-    // Send a new track to the Spotify player when image is clicked
-    $(document).on('click', '.track-img', function(){
+    function buildTubeResults(results) {
 
-        // Track ID is stored in the image's data-id
-        var trackSend = $(this).data('id'); 
+        // Remove main-api-panel if it exists to clear the area for fresh results
+        $('.main-api-panel').remove();
 
-        // // Call spotifyPlayer to add a new track to the audio player
-        // spotifyPlayer(trackSend);
+        var tubeContainer = $('<div>'); //creates a new div element
+        tubeContainer.addClass('main-api-panel'); //adds classes to tubeContainer
 
-    });
+        // Loop through the response
+        for(var i = 0; i < results.length; i++){
+
+            var tubeWrap = $('<div>'); //creates a new div element
+            tubeWrap.addClass('track-container'); //adds classes to tubeWrap
+
+            var tubeLink = $('<a>');
+            tubeLink.attr('href', 'https://www.youtube.com/watch?v=' + results[i].id.videoId);
+
+            var tubeImg = $('<img>'); //creates a new img element
+            tubeImg.attr('src', results[i].snippet.thumbnails.medium.url); //add img src from response
+            tubeImg.data('id', results[i].id.videoId); //add data-id from results track id
+            tubeImg.addClass('track-img'); //add track-img class to img element
+
+            var tubeTitle = $('<h4>'); //creates a new p element
+            tubeTitle.text(results[i].snippet.title); //creates text node with album name
+
+            var tubeDesc = $('<p>'); //creates a new p element
+            tubeDesc.text(results[i].snippet.description); //creates text node with album name
+
+            tubeWrap.append(tubeLink); //append tubeImg to tubeWrap
+            tubeLink.append(tubeImg); //append tubeImg to tubeWrap
+            tubeLink.append(tubeTitle); //append tubeTitle to tubeWrap
+            tubeLink.append(tubeDesc); //append tubeTitle to tubeWrap
+
+            tubeContainer.append(tubeWrap); //append tubeWrap to tracksContainer
+
+        }
+
+        // Hide about Adam content
+        $("#main-hidable").hide();
+
+        // Appends the new dynamic content to main-panel div
+        $("#main-panel").append(tubeContainer);
+
+    }
+
+    // // Send a new track to the Spotify player when image is clicked
+    // $(document).on('click', '.track-img', function(){
+
+    //     // Track ID is stored in the image's data-id
+    //     var trackSend = $(this).data('id'); 
+
+    //     // // Call spotifyPlayer to add a new track to the audio player
+    //     // spotifyPlayer(trackSend);
+
+    // });
 
     // On Button Click for Artist Selection
     $(document).on('click', '#spotify-search', function(){
