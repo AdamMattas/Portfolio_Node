@@ -68,14 +68,33 @@ $(document).on('ready', function(){
             console.log('TUBE RESPONSE: ', response);
 
             // Store response in variable
-            var results = response.items;
+            // var results = response.items;
 
-            buildTubeResults(results);
+            buildTubeResults(response, search);
 
         });     
     } // End of getYouTube function
 
-    function buildTubeResults(results) {
+    // Query spotify and build results divs
+    function getYouTubeNext(token, search){
+
+        // Run an initial search to identify the artist unique Spotify ID
+        var queryURL = "https://www.googleapis.com/youtube/v3/search?pageToken=" + token + "&part=snippet&q=" + search + "&type=video&key=AIzaSyD_s7PmE89zIcTXeTYWnClw0uOYh8446NU";
+
+        $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+
+            // Logs the entire object to console
+            console.log('TUBE RESPONSE: ', response);
+
+            // Store response in variable
+            // var results = response.items;
+
+            buildTubeResults(response, search);
+
+        });     
+    } // End of getYouTube function
+
+    function buildTubeResults(response, search) {
 
         // Remove main-api-panel if it exists to clear the area for fresh results
         $('.main-api-panel').remove();
@@ -84,24 +103,24 @@ $(document).on('ready', function(){
         tubeContainer.addClass('main-api-panel'); //adds classes to tubeContainer
 
         // Loop through the response
-        for(var i = 0; i < results.length; i++){
+        for(var i = 0; i < response.items.length; i++){
 
             var tubeWrap = $('<div>'); //creates a new div element
             tubeWrap.addClass('track-container'); //adds classes to tubeWrap
 
             var tubeLink = $('<a>');
-            tubeLink.attr('href', 'https://www.youtube.com/watch?v=' + results[i].id.videoId);
+            tubeLink.attr('href', 'https://www.youtube.com/watch?v=' + response.items[i].id.videoId);
 
             var tubeImg = $('<img>'); //creates a new img element
-            tubeImg.attr('src', results[i].snippet.thumbnails.medium.url); //add img src from response
-            tubeImg.data('id', results[i].id.videoId); //add data-id from results track id
+            tubeImg.attr('src', response.items[i].snippet.thumbnails.medium.url); //add img src from response
+            tubeImg.data('id', response.items[i].id.videoId); //add data-id from results track id
             tubeImg.addClass('track-img'); //add track-img class to img element
 
             var tubeTitle = $('<h4>'); //creates a new p element
-            tubeTitle.text(results[i].snippet.title); //creates text node with album name
+            tubeTitle.text(response.items[i].snippet.title); //creates text node with album name
 
             var tubeDesc = $('<p>'); //creates a new p element
-            tubeDesc.text(results[i].snippet.description); //creates text node with album name
+            tubeDesc.text(response.items[i].snippet.description); //creates text node with album name
 
             tubeWrap.append(tubeLink); //append tubeImg to tubeWrap
             tubeLink.append(tubeImg); //append tubeImg to tubeWrap
@@ -117,6 +136,28 @@ $(document).on('ready', function(){
 
         // Appends the new dynamic content to main-panel div
         $("#main-panel").append(tubeContainer);
+
+        if (response.nextPageToken) {
+
+            console.log('NEXT: ', response.nextPageToken);
+
+            var nextTube = $('<div>');
+            nextTube.text('Next>>>');
+            nextTube.data('name', response.nextPageToken); 
+
+            $("#main-panel").append(nextTube);
+
+        }
+
+        if (response.prevPageToken) {
+
+            var prevTube = $('<div>');
+            prevTube.text('<<<Prev');
+            prevTube.data('name', response.prevPageToken); 
+
+            $("#main-panel").append(prevTube);
+
+        }
 
     }
 
