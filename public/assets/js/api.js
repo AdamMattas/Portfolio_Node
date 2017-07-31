@@ -37,87 +37,84 @@ $(document).on('ready', function(){
 // BEGIN SPOTIFY API CODE
 
     // Adds song preview to Spotify audio player
-    function spotifyPlayer(track){
+    // function spotifyPlayer(track){
 
-        // Prevents duplicate players after multiple searches
-        $('.player').remove();
+    //     // Prevents duplicate players after multiple searches
+    //     $('.player').remove();
 
-        var playDiv = $('<div>'); //creates a new div element
-        playDiv.addClass('player'); //adds player class to playDiv
+    //     var playDiv = $('<div>'); //creates a new div element
+    //     playDiv.addClass('player'); //adds player class to playDiv
 
-        // Builds a Spotify player playing the parameter song. (NOTE YOU NEED TO BE LOGGED INTO SPOTIFY)
-        var player = '<iframe class="spot-player" src="https://embed.spotify.com/?uri=spotify:track:' + track + '" frameborder="0" allowtransparency="true"></iframe>';
+    //     // Builds a Spotify player playing the parameter song. (NOTE YOU NEED TO BE LOGGED INTO SPOTIFY)
+    //     var player = '<iframe class="spot-player" src="https://embed.spotify.com/?uri=spotify:track:' + track + '" frameborder="0" allowtransparency="true"></iframe>';
 
-        // Append player to end of playDiv
-        playDiv.append(player);
+    //     // Append player to end of playDiv
+    //     playDiv.append(player);
 
-        // Prepends playDiv to main-api-panel (created dynamically during search submit)
-        $(".main-api-panel").prepend(playDiv);
+    //     // Prepends playDiv to main-api-panel (created dynamically during search submit)
+    //     $(".main-api-panel").prepend(playDiv);
 
-    }
+    // }
 
     // Query spotify and build results divs
-    function getArtistTrack(artist){
+    function getYouTube(search){
 
         // Run an initial search to identify the artist unique Spotify ID
-        var queryURL = "https://api.spotify.com/v1/search?q=" + artist + "&type=artist";
-        var headers = "Authorization: Bearer {35ab8e4dc70e4dfba691585d2ab754e2}"
-        $.ajax({url: queryURL, headers, method: 'GET'}).done(function(response) {
+        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + search + "&type=video&key=AIzaSyD_s7PmE89zIcTXeTYWnClw0uOYh8446NU";
+
+        $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
 
             // Logs the entire object to console
-            console.log(response);
+            console.log('TUBE RESPONSE: ', response);
 
-            // Store the Artist ID from the Spotify Object
-            var artistID = response.artists.items[0].id;
+            // Remove main-api-panel if it exists to clear the area for fresh results
+            $('.main-api-panel').remove();
 
-            // Build a SECOND URL to query another Spotify endpoint (this one for the tracks)
-            var queryURLTracks = "https://api.spotify.com/v1/artists/" + artistID +"/top-tracks?country=US";
+            var tubeContainer = $('<div>'); //creates a new div element
+            tubeContainer.addClass('main-api-panel'); //adds classes to tubeContainer
 
-            // We then run a second AJAX call to get the tracks associated with that Spotify ID
-            $.ajax({url: queryURLTracks, method: 'GET'}).done(function(trackResponse) {
+            // Store response in variable
+            // var results = trackResponse.tracks;
+            var results = response.items;
 
-                // Log the tracks to the console
-                console.log(trackResponse);
+            // Loop through the response
+            for(var i = 0; i < results.length; i++){
 
-                // Remove main-api-panel if it exists to clear the area for fresh results
-                $('.main-api-panel').remove();
+                var tubeWrap = $('<div>'); //creates a new div element
+                tubeWrap.addClass('track-container'); //adds classes to tubeWrap
 
-                var tracksContainer = $('<div>'); //creates a new div element
-                tracksContainer.addClass('main-api-panel'); //adds classes to tracksContainer
+                var tubeLink = $('<a>');
+                tubeLink.attr('href', 'https://www.youtube.com/watch?v=' + results[i].id.videoId);
 
-                // Store response in variable
-                var results = trackResponse.tracks;
+                var tubeImg = $('<img>'); //creates a new img element
+                tubeImg.attr('src', results[i].snippet.thumbnails.medium.url); //add img src from response
+                tubeImg.data('id', results[i].id.videoId); //add data-id from results track id
+                tubeImg.addClass('track-img'); //add track-img class to img element
 
-                // Loop through the response
-                for(var i = 0; i < results.length; i++){
+                var tubeTitle = $('<h4>'); //creates a new p element
+                tubeTitle.text(results[i].snippet.title); //creates text node with album name
 
-                    var trackWrap = $('<div>'); //creates a new div element
-                    trackWrap.addClass('col-md-4 track-container'); //adds classes to trackWrap
+                var tubeDesc = $('<p>'); //creates a new p element
+                tubeDesc.text(results[i].snippet.description); //creates text node with album name
 
-                    var trackImg = $('<img>'); //creates a new img element
-                    trackImg.attr('src', results[i].album.images[1].url); //add img src from response
-                    trackImg.data('id', results[i].id); //add data-id from results track id
-                    trackImg.addClass('track-img'); //add track-img class to img element
+                tubeWrap.append(tubeLink); //append tubeImg to tubeWrap
+                tubeLink.append(tubeImg); //append tubeImg to tubeWrap
+                tubeLink.append(tubeTitle); //append tubeTitle to tubeWrap
+                tubeLink.append(tubeDesc); //append tubeTitle to tubeWrap
 
-                    var trackTitle = $('<p>'); //creates a new p element
-                    trackTitle.text(results[i].album.name); //creates text node with album name
+                tubeContainer.append(tubeWrap); //append tubeWrap to tracksContainer
 
-                    trackWrap.append(trackImg); //append trackImg to trackWrap
-                    trackWrap.append(trackTitle); //append trackTitle to trackWrap
+            }
 
-                    tracksContainer.append(trackWrap); //append trackWrap to tracksContainer
+            // Hide about Adam content
+            $("#main-hidable").hide();
 
-                }
+            // Appends the new dynamic content to main-panel div
+            $("#main-panel").append(tubeContainer);
 
-                // Hide about Adam content
-                $("#main-hidable").hide();
+            // // Call spotifyPlayer to add a new track to the audio player
+            // spotifyPlayer(trackResponse.tracks[0].id);
 
-                // Appends the new dynamic content to main-panel div
-                $("#main-panel").append(tracksContainer);
-
-                // Call spotifyPlayer to add a new track to the audio player
-                spotifyPlayer(trackResponse.tracks[0].id);
-            })
         });     
     } // End of getArtistTrack function
 
@@ -127,8 +124,8 @@ $(document).on('ready', function(){
         // Track ID is stored in the image's data-id
         var trackSend = $(this).data('id'); 
 
-        // Call spotifyPlayer to add a new track to the audio player
-        spotifyPlayer(trackSend);
+        // // Call spotifyPlayer to add a new track to the audio player
+        // spotifyPlayer(trackSend);
 
     });
 
@@ -136,10 +133,10 @@ $(document).on('ready', function(){
     $(document).on('click', '#spotify-search', function(){
 
         // Grab the Artist Name
-        var artist = $('#spotify-input').val().trim();
+        var search = $('#spotify-input').val().trim();
 
         // Run the Artist Player Function (Passing in the Artist as an Argument)
-        getArtistTrack(artist);
+        getYouTube(search);
 
         // Empty search area after submit
         $('#spotify-input').val('');

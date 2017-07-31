@@ -574,12 +574,15 @@ a:hover{
 
 .track-container{
 	margin-top: 15px;
-	min-height: 325px;
+	min-height: 225px;
 }
 
 .track-img{
-	width: 100%;
+	width: 35%;
 	border: 1px solid #000000;
+	float: left;
+	margin-right: 25px;
+    margin-bottom: 25px;
 	cursor: pointer;
 }
 
