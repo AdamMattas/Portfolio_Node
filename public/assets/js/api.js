@@ -36,10 +36,10 @@ $(document).on('ready', function(){
 // =========================================
 // BEGIN YouTube API CODE
 
-    // Query spotify and build results divs
+    // Query YouTube and call build results function
     function getYouTube(search){
 
-        // Run an initial search to identify the artist unique Spotify ID
+        // Query YouTube based on input
         var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + search + "&type=video&key=AIzaSyD_s7PmE89zIcTXeTYWnClw0uOYh8446NU";
 
         $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
@@ -52,10 +52,10 @@ $(document).on('ready', function(){
         });     
     } // End of getYouTube function
 
-    // Query spotify and build results divs
+    // Query YouTube for the 'next or previous' 5 videos based on token
     function getYouTubeNext(token, search){
 
-        // Run an initial search to identify the artist unique Spotify ID
+        // Query YouTube based on 'next or previous' token
         var queryURL = "https://www.googleapis.com/youtube/v3/search?pageToken=" + token + "&part=snippet&q=" + search + "&type=video&key=AIzaSyD_s7PmE89zIcTXeTYWnClw0uOYh8446NU";
 
         $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
@@ -66,7 +66,7 @@ $(document).on('ready', function(){
             buildTubeResults(response, search);
 
         });     
-    } // End of getYouTube function
+    } // End of getYouTubeNext function
 
     function buildTubeResults(response, search) {
 
@@ -77,43 +77,43 @@ $(document).on('ready', function(){
 
 
         var tubeContainer = $('<div>'); //creates a new div element
-        tubeContainer.addClass('main-api-panel'); //adds classes to tubeContainer
+        tubeContainer.addClass('main-api-panel'); //adds a class to tubeContainer
 
         // Loop through the response
         for(var i = 0; i < response.items.length; i++){
 
             var tubeWrap = $('<div>'); //creates a new div element
-            tubeWrap.addClass('track-container'); //adds classes to tubeWrap
+            tubeWrap.addClass('tube-container'); //adds a class to tubeWrap
 
-            var tubeLink = $('<a>');
-            tubeLink.attr('href', 'https://www.youtube.com/watch?v=' + response.items[i].id.videoId);
-            tubeLink.attr('target', '_blank');
+            var tubeLink = $('<a>'); //creates a new a element
+            tubeLink.attr('href', 'https://www.youtube.com/watch?v=' + response.items[i].id.videoId); //adds attr to element
+            tubeLink.attr('target', '_blank'); //opens link in new tab
 
             var tubeImg = $('<img>'); //creates a new img element
             tubeImg.attr('src', response.items[i].snippet.thumbnails.medium.url); //add img src from response
-            tubeImg.data('id', response.items[i].id.videoId); //add data-id from results track id
-            tubeImg.addClass('track-img'); //add track-img class to img element
+            tubeImg.data('id', response.items[i].id.videoId); //add data-id from results video id
+            tubeImg.addClass('tube-img'); //add tube-img class to img element
 
-            var tubeTitle = $('<h4>'); //creates a new p element
-            tubeTitle.text(response.items[i].snippet.title); //creates text node with album name
+            var tubeTitle = $('<h4>'); //creates a new h4 element
+            tubeTitle.text(response.items[i].snippet.title); //creates text node with video title
 
             var tubeDesc = $('<p>'); //creates a new p element
-            tubeDesc.text(response.items[i].snippet.description); //creates text node with album name
+            tubeDesc.text(response.items[i].snippet.description); //creates text node with video description
 
-            var tubeLine = $('<div>'); //creates a new img element
-            tubeLine.addClass('tube-line'); //add track-img class to img element
+            var tubeLine = $('<div>'); //creates a new div element
+            tubeLine.addClass('tube-line'); //add tube-line class to img element
 
-            var tubeChannel = $('<p>'); //creates a new img element
-            tubeChannel.text(response.items[i].snippet.channelTitle); //creates text node with album name
+            var tubeChannel = $('<p>'); //creates a new p element
+            tubeChannel.text(response.items[i].snippet.channelTitle); //creates text node with the channel name
 
-            tubeWrap.append(tubeLink); //append tubeImg to tubeWrap
-            tubeLink.append(tubeImg); //append tubeImg to tubeWrap
-            tubeLink.append(tubeTitle); //append tubeTitle to tubeWrap
-            tubeLink.append(tubeDesc); //append tubeTitle to tubeWrap
-            tubeLine.append(tubeChannel); //append tubeTitle to tubeWrap
-            tubeLink.append(tubeLine); //append tubeTitle to tubeWrap
+            tubeWrap.append(tubeLink); //append tubeLink to tubeWrap
+            tubeLink.append(tubeImg); //append tubeImg to tubeLink
+            tubeLink.append(tubeTitle); //append tubeTitle to tubeLink
+            tubeLink.append(tubeDesc); //append tubeDesc to tubeLink
+            tubeLine.append(tubeChannel); //append tubeChannel to tubeLine
+            tubeLink.append(tubeLine); //append tubeLine to tubeLink
 
-            tubeContainer.append(tubeWrap); //append tubeWrap to tracksContainer
+            tubeContainer.append(tubeWrap); //append tubeWrap to tubeContainer
 
         }
 
@@ -125,67 +125,69 @@ $(document).on('ready', function(){
 
         if (response.nextPageToken) {
 
-            var tubeNavCont = $('<div>'); //creates a new img element
-            tubeNavCont.addClass('tube-nav'); //add track-img class to img element
+            var tubeNavCont = $('<div>'); //creates a new div element
+            tubeNavCont.addClass('tube-nav'); //add tube-nav class to div element
 
-            var nextTube = $('<span>');
-            nextTube.text('Next >>>');
-            nextTube.attr('id', 'next-tube'); //add img src from response
+            var nextTube = $('<span>'); //creates a new span element
+            nextTube.text('Next >>>'); //creates text node on span element
+            nextTube.attr('id', 'next-tube'); //add id attr to span
             nextTube.addClass('pagination-btn'); //add pagination-btn class to span element
-            nextTube.data('name', response.nextPageToken);
-            nextTube.data('search', search); 
+            nextTube.data('name', response.nextPageToken); //add data- to span
+            nextTube.data('search', search); //add data- to span
 
-            $(tubeNavCont).append(nextTube);
-            $(tubeContainer).append(tubeNavCont);
+            $(tubeNavCont).append(nextTube); //append nextTube to tubeNavCont
+            $(tubeContainer).append(tubeNavCont); //append tubeNavCont to tubeContainer
 
         }
 
         if (response.prevPageToken) {
 
-            var prevTube = $('<span>');
-            prevTube.text('<<< Prev');
-            prevTube.attr('id', 'prev-tube'); //add img src from response
+            var prevTube = $('<span>'); //creates a new span element
+            prevTube.text('<<< Prev'); //creates text node on span element
+            prevTube.attr('id', 'prev-tube'); //add id attr to span
             prevTube.addClass('pagination-btn'); //add pagination-btn class to span element
-            prevTube.data('name', response.prevPageToken); 
-            prevTube.data('search', search);
+            prevTube.data('name', response.prevPageToken); //add data- to span
+            prevTube.data('search', search); //add data- to span
 
-            $(tubeNavCont).append(prevTube);
+            $(tubeNavCont).append(prevTube); //append prevTube to tubeNavCont
 
         }
 
     }
 
-    // Send a new track to the Spotify player when image is clicked
+    // On click call function to display the next 5 videos
     $(document).on('click', '#next-tube', function() {
 
-        // Track ID is stored in the image's data-id
+        // Next 5 videos token is stored in the button's data-name attr
         var nextSend = $(this).data('name');
+        // Search term is stored in the button's data-search attr
         var nextSearch = $(this).data('search');
 
-        // // Call spotifyPlayer to add a new track to the audio player
+        // Call function to display the next 5 videos
         getYouTubeNext(nextSend, nextSearch)
 
     });
 
-    // Send a new track to the Spotify player when image is clicked
+    // On click call function to display the previous 5 videos
     $(document).on('click', '#prev-tube', function() {
 
-        // Track ID is stored in the image's data-id
+        // Previous 5 videos token is stored in the button's data-name attr
         var prevSend = $(this).data('name');
+        // Search term is stored in the button's data-search attr
         var nextSearch = $(this).data('search');
 
-        // // Call spotifyPlayer to add a new track to the audio player
+        // Call function to display the previous 5 videos
         getYouTubeNext(prevSend, nextSearch)
 
     });
 
-    // On Button Click for Artist Selection
+    // On Button Click run initial youtube query
     $(document).on('click', '#youtube-search', function(){
 
-        // Grab the Artist Name
+        // Grab the search term
         var search = $('#youtube-input').val().trim();
 
-        // Run the Artist Player Function (Passing in the Artist as an Argument)
+        // Run the getYouTube (Passing in the search term as an Argument)
         getYouTube(search);
 
         // Empty search area after submit

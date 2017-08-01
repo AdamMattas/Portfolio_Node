@@ -572,7 +572,7 @@ a:hover{
 	max-height: 95px;
 }
 
-.track-container {
+.tube-container {
 	position: relative;
 	margin-top: 15px;
 	min-height: 175px;
@@ -580,15 +580,15 @@ a:hover{
 	border-right: 15px solid #222222;
 }
 
-.track-container > a {
+.tube-container > a {
 	position: static;
 }	
 
-.track-container > a > p {
+.tube-container > a > p {
 	margin-right: 15px;
 }
 
-.track-img {
+.tube-img {
 	width: 35%;
 	border: 1px solid #000000;
 	border-bottom: none;
