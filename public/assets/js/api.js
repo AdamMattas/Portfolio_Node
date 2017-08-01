@@ -125,10 +125,18 @@ $(document).on('ready', function(){
             var tubeDesc = $('<p>'); //creates a new p element
             tubeDesc.text(response.items[i].snippet.description); //creates text node with album name
 
+            var tubeLine = $('<div>'); //creates a new img element
+            tubeLine.addClass('tube-line'); //add track-img class to img element
+
+            var tubeChannel = $('<p>'); //creates a new img element
+            tubeChannel.text(response.items[i].snippet.channelTitle); //creates text node with album name
+
             tubeWrap.append(tubeLink); //append tubeImg to tubeWrap
             tubeLink.append(tubeImg); //append tubeImg to tubeWrap
             tubeLink.append(tubeTitle); //append tubeTitle to tubeWrap
             tubeLink.append(tubeDesc); //append tubeTitle to tubeWrap
+            tubeLine.append(tubeChannel); //append tubeTitle to tubeWrap
+            tubeLink.append(tubeLine); //append tubeTitle to tubeWrap
 
             tubeContainer.append(tubeWrap); //append tubeWrap to tracksContainer
 
@@ -142,27 +150,31 @@ $(document).on('ready', function(){
 
         if (response.nextPageToken) {
 
-            console.log('NEXT: ', response.nextPageToken);
+            var tubeNavCont = $('<div>'); //creates a new img element
+            tubeNavCont.addClass('tube-nav'); //add track-img class to img element
 
-            var nextTube = $('<div>');
-            nextTube.text('Next>>>');
+            var nextTube = $('<span>');
+            nextTube.text('Next >>>');
             nextTube.attr('id', 'next-tube'); //add img src from response
+            nextTube.addClass('pagination-btn'); //add pagination-btn class to span element
             nextTube.data('name', response.nextPageToken);
             nextTube.data('search', search); 
 
-            $("#main-panel").append(nextTube);
+            $(tubeNavCont).append(nextTube);
+            $(tubeContainer).append(tubeNavCont);
 
         }
 
         if (response.prevPageToken) {
 
-            var prevTube = $('<div>');
-            prevTube.text('<<<Prev');
+            var prevTube = $('<span>');
+            prevTube.text('<<< Prev');
             prevTube.attr('id', 'prev-tube'); //add img src from response
+            prevTube.addClass('pagination-btn'); //add pagination-btn class to span element
             prevTube.data('name', response.prevPageToken); 
             prevTube.data('search', search);
 
-            $("#main-panel").append(prevTube);
+            $(tubeNavCont).append(prevTube);
 
         }
 
