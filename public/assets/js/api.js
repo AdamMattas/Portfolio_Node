@@ -87,6 +87,7 @@ $(document).on('ready', function(){
 
             var tubeLink = $('<a>');
             tubeLink.attr('href', 'https://www.youtube.com/watch?v=' + response.items[i].id.videoId);
+            tubeLink.attr('target', '_blank');
 
             var tubeImg = $('<img>'); //creates a new img element
             tubeImg.attr('src', response.items[i].snippet.thumbnails.medium.url); //add img src from response
