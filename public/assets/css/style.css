@@ -391,21 +391,21 @@ a:hover{
 	border-bottom: 8px solid #055c98;
 }
 
-.spotify-lrg{
+.youtube-lrg{
 	position: absolute;
 	right: 0;
 	top: 25%;
-	background-image: url("../images/spotify_lrg.png");
+	background-image: url("../images/youtube.png");
 	width: 143px;
 	height: 474px;
 	opacity: 0;
 }
 
-.spotify-lrg-in{
+.youtube-lrg-in{
 	position: absolute;
 	right: 0;
 	top: 25%;
-	background-image: url("../images/spotify_lrg.png");
+	background-image: url("../images/youtube_lrg.png");
 	width: 143px;
 	height: 474px;
 	-webkit-transition: opacity 3s ease-in-out;
@@ -415,11 +415,11 @@ a:hover{
    opacity: 1;
 }
 
-.spotify-lrg-out{
+.youtube-lrg-out{
 	position: absolute;
 	right: 0;
 	top: 25%;
-	background-image: url("../images/spotify_lrg.png");
+	background-image: url("../images/youtube_lrg.png");
 	width: 143px;
 	height: 474px;
 	-webkit-transition: opacity 3s ease-in-out;
@@ -429,7 +429,7 @@ a:hover{
    opacity: 0;
 }
 
-.nytimes-lrg{
+.nytimes-lrg {
 	position: absolute;
 	right: 0;
 	top: 25%;
@@ -439,21 +439,7 @@ a:hover{
 	opacity: 0;
 }
 
-.nytimes-lrg-in{
-	position: absolute;
-	right: 0;
-	top: 25%;
-	background-image: url("../images/nytimes_lrg.png");
-	width: 143px;
-	height: 467px;
-	-webkit-transition: opacity 3s ease-in-out;
-  -moz-transition: opacity 3s ease-in-out;
-  -ms-transition: opacity 3s ease-in-out;
-  -o-transition: opacity 3s ease-in-out;
-   opacity: 1;
-}
-
-.nytimes-lrg-out{
+.nytimes-lrg-in {
 	position: absolute;
 	right: 0;
 	top: 25%;
@@ -464,10 +450,24 @@ a:hover{
   -moz-transition: opacity 3s ease-in-out;
   -ms-transition: opacity 3s ease-in-out;
   -o-transition: opacity 3s ease-in-out;
+   opacity: 1;
+}
+
+.nytimes-lrg-out {
+	position: absolute;
+	right: 0;
+	top: 25%;
+	background-image: url("../images/nytimes_lrg.png");
+	width: 143px;
+	height: 467px;
+	-webkit-transition: opacity 3s ease-in-out;
+  -moz-transition: opacity 3s ease-in-out;
+  -ms-transition: opacity 3s ease-in-out;
+  -o-transition: opacity 3s ease-in-out;
    opacity: 0;
 }
 
-.omdb-lrg{
+.omdb-lrg {
 	position: absolute;
 	right: 0;
 	top: 19%;
@@ -477,7 +477,7 @@ a:hover{
 	opacity: 0;
 }
 
-.omdb-lrg-in{
+.omdb-lrg-in {
 	position: absolute;
 	right: 0;
 	top: 19%;
@@ -491,7 +491,7 @@ a:hover{
    opacity: 1;
 }
 
-.omdb-lrg-out{
+.omdb-lrg-out {
 	position: absolute;
 	right: 0;
 	top: 19%;
@@ -505,7 +505,7 @@ a:hover{
    opacity: 0;
 }
 
-.omdb-img{ 
+.omdb-img { 
 	width: auto; 
 	height: 508px; 
 	margin: 1px 15px 0px 0px; 
@@ -513,30 +513,30 @@ a:hover{
 	float: left; 
 }
 
-.omdb-title{
+.omdb-title {
 	font-weight: bold;
 	margin-top: 13px;
 	color: #000000;
 }
 
-.api-title{
+.api-title {
 	font-weight: bold;
 	margin-bottom: 10px;
 }
 
-.api-button{
+.api-button {
 	width: 230px;
 	height: 79px;
 	margin-top: 15px;
 	border: 1px solid #000000;
 }
 
-.api-input{
+.api-input {
 	margin-top: 15px;
 	border: 1px solid #000000;
 }
 
-.api-search-button{
+.api-search-button {
 	margin-top: 15px;
 	width: 230px;
 	background-color: #222222;
@@ -544,35 +544,35 @@ a:hover{
 	border-radius: 5px;
 }
 
-.api-search-button:hover{
+.api-search-button:hover {
 	background-color: #ffffff;
 	color: #000000;
 	border: 1px solid #000000;
 	border-radius: 5px;
 }
 
-.api-restore{
+.api-restore {
 	margin-top: 15px;
 	width: 230px;
 	border: 1px solid #000000;
 	border-radius: 5px;
 }
 
-.api-restore:hover{
+.api-restore:hover {
 	background-color: #ffffff;
 	color: #222222;
 	border: 1px solid #222222;
 	border-radius: 5px;
 }
 
-.spot-player{
+.spot-player {
 	margin-top: 15px;
 	margin-bottom: 0px;
 	width: 100%;
 	max-height: 95px;
 }
 
-.track-container{
+.track-container {
 	position: relative;
 	margin-top: 15px;
 	min-height: 175px;
@@ -580,15 +580,15 @@ a:hover{
 	border-right: 15px solid #222222;
 }
 
-.track-container > a{
+.track-container > a {
 	position: static;
 }	
 
-.track-container > a > p{
+.track-container > a > p {
 	margin-right: 15px;
 }
 
-.track-img{
+.track-img {
 	width: 35%;
 	border: 1px solid #000000;
 	border-bottom: none;

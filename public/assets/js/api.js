@@ -1,13 +1,13 @@
 // Object to populate Api Side Menu after click on About Page
-var spotify = {
-    title: "Spotify Music",
-    image: "assets/images/spotify.png",
-    placeholder: "Search Artist Name",
-    id: "spotify-input",
-    searchClass: "spotify-search",
-    large: "spotify-lrg",
-    largeIn: "spotify-lrg-in",
-    largeOut: "spotify-lrg-out"
+var youtube = {
+    title: "YouTube Videos",
+    image: "assets/images/youtube.png",
+    placeholder: "Search YouTube",
+    id: "youtube-input",
+    searchClass: "youtube-search",
+    large: "youtube-lrg",
+    largeIn: "youtube-lrg-in",
+    largeOut: "youtube-lrg-out"
 },
 nyt = {
     title: "The New York Times",
@@ -34,27 +34,7 @@ omdb = {
 $(document).on('ready', function(){
 
 // =========================================
-// BEGIN SPOTIFY API CODE
-
-    // Adds song preview to Spotify audio player
-    // function spotifyPlayer(track){
-
-    //     // Prevents duplicate players after multiple searches
-    //     $('.player').remove();
-
-    //     var playDiv = $('<div>'); //creates a new div element
-    //     playDiv.addClass('player'); //adds player class to playDiv
-
-    //     // Builds a Spotify player playing the parameter song. (NOTE YOU NEED TO BE LOGGED INTO SPOTIFY)
-    //     var player = '<iframe class="spot-player" src="https://embed.spotify.com/?uri=spotify:track:' + track + '" frameborder="0" allowtransparency="true"></iframe>';
-
-    //     // Append player to end of playDiv
-    //     playDiv.append(player);
-
-    //     // Prepends playDiv to main-api-panel (created dynamically during search submit)
-    //     $(".main-api-panel").prepend(playDiv);
-
-    // }
+// BEGIN YouTube API CODE
 
     // Query spotify and build results divs
     function getYouTube(search){
@@ -66,9 +46,6 @@ $(document).on('ready', function(){
 
             // Logs the entire object to console
             console.log('TUBE RESPONSE: ', response);
-
-            // Store response in variable
-            // var results = response.items;
 
             buildTubeResults(response, search);
 
@@ -85,9 +62,6 @@ $(document).on('ready', function(){
 
             // Logs the entire object to console
             console.log('TUBE RESPONSE: ', response);
-
-            // Store response in variable
-            // var results = response.items;
 
             buildTubeResults(response, search);
 
@@ -205,22 +179,22 @@ $(document).on('ready', function(){
     });
 
     // On Button Click for Artist Selection
-    $(document).on('click', '#spotify-search', function(){
+    $(document).on('click', '#youtube-search', function(){
 
         // Grab the Artist Name
-        var search = $('#spotify-input').val().trim();
+        var search = $('#youtube-input').val().trim();
 
         // Run the Artist Player Function (Passing in the Artist as an Argument)
         getYouTube(search);
 
         // Empty search area after submit
-        $('#spotify-input').val('');
+        $('#youtube-input').val('');
 
         // Prevents moving to the next page
         return false;
     });
 
-// END SPOTIFY API CODE
+// END YouTube API CODE
 // =========================================
 // BEGIN THE NEW YORK TIMES API CODE
 
