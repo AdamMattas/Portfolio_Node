@@ -361,14 +361,40 @@ $(document).on('ready', function(){
     $(document).on('click', '#omdb-search', function() {
 
         var movie = $('#omdb-input').val().trim();
-        var queryURL = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=full&apikey=4b322bb5&r=json";
-        
-        // Creates AJAX call for the specific movie being 
-        $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+        var key = "5e965acc3187b331b096f142476921ff"
+        var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=" + key + "&query=" + movie;
 
-            console.log(response);
+        $.ajax({url: queryURL, method: 'GET'}).done(function(response) { 
+            console.log('1st Response', response);
 
-            if(response.Response != 'False'){
+            var movieId = response.results[0].id;
+
+            // getDetails(movieId);
+            getCrewDetails(movieId);
+        });
+
+        function getCrewDetails(id) { 
+
+            var queryCrewDetails = "https://api.themoviedb.org/3/movie/" + id + "/credits?api_key=" + key;
+
+            $.ajax({url: queryCrewDetails, method: 'GET'}).done(function(responseCrew) { 
+                console.log('2nd Response', responseCrew);
+
+                getDetails(id, responseCrew);
+                
+            });
+
+        }
+
+        function getDetails(id, crew) {
+
+            // var queryDetails = "https://api.themoviedb.org/3/search/movie?api_key=" + key + "&query=" + movie;
+            var queryDetails = "https://api.themoviedb.org/3/movie/" + id + "?api_key=" + key + "&language=en-US";
+            //https://api.themoviedb.org/3/movie/1366?api_key=5e965acc3187b331b096f142476921ff&language=en-US
+
+            $.ajax({url: queryDetails, method: 'GET'}).done(function(response) { 
+                console.log('3rd Response', response);
+
 
                 // Clear the wells from the previous run
                 $('.main-api-panel').empty();
@@ -376,28 +402,32 @@ $(document).on('ready', function(){
                 var omdbContainer = $('<div>'); //creates a new div element
                 omdbContainer.addClass('main-api-panel'); //adds a class to tracksContainer
 
-                if(response.Poster != 'N/A'){
-                    var omdbImage = $('<img>'); //creates a new img element
-                    omdbImage.attr('src', response.Poster); //adds img src to img element
-                    omdbImage.addClass('omdb-img'); //adds a class to omdbImage   
-                }else{
-                    var omdbImage = $('<img>'); //creates a new img element
-                    omdbImage.attr('src', './assets/images/generic.jpg'); //adds img src to img element
-                    omdbImage.addClass('omdb-img'); //adds a class to omdbImage       
-                }
+                // if (response.Poster != 'N/A') {
+                //     var omdbImage = $('<img>'); //creates a new img element
+                //     omdbImage.attr('src', 'https://image.tmdb.org/t/p/w500/' + response.poster_path); //adds img src to img element
+                //     omdbImage.addClass('omdb-img'); //adds a class to omdbImage   
+                // } else {
+                //     var omdbImage = $('<img>'); //creates a new img element
+                //     omdbImage.attr('src', './assets/images/generic.jpg'); //adds img src to img element
+                //     omdbImage.addClass('omdb-img'); //adds a class to omdbImage       
+                // }
+
+                var omdbImage = $('<img>'); //creates a new img element
+                omdbImage.attr('src', 'https://image.tmdb.org/t/p/w500/' + response.poster_path); //adds img src to img element
+                omdbImage.addClass('omdb-img'); //adds a class to omdbImage  
                 
                 var omdbTitle = $('<h2>'); //creates a new h3 element
                 omdbTitle.addClass('omdb-title'); //adds a class to omdbTitle
-                omdbTitle.text(response.Title); //adds textNode to omdbTitlte
+                omdbTitle.text(response.original_title); //adds textNode to omdbTitlte
+
+                var omdbTag = $('<h4>'); //creates a new h4 element
+                omdbTag.text(response.tagline); //adds textNode to omdbYear
 
                 var omdbYear = $('<h4>'); //creates a new h4 element
-                omdbYear.text('Released: ' + response.Year); //adds textNode to omdbYear
-
-                var omdbRated = $('<h4>'); //creates a new h4 element
-                omdbRated.text('Rated: ' + response.Rated); //adds textNode to omdbRated
+                omdbYear.text('Released: ' + response.release_date); //adds textNode to omdbYear
 
                 var omdbGenre = $('<h4>'); //creates a new h4 element
-                omdbGenre.text('Genre: ' + response.Genre); //adds textNode to omdbGenre
+                omdbGenre.text('Genre: ' + response.genres[0].name); //adds textNode to omdbGenre
 
                 var omdbDirector = $('<h4>'); //creates a new h4 element
                 omdbDirector.text('Directed by: ' + response.Director); //adds textNode to omdbDirector
@@ -408,33 +438,29 @@ $(document).on('ready', function(){
                 var omdbActors = $('<h4>'); //creates a new h4 element
                 omdbActors.text('Starring: ' + response.Actors); //adds textNode to omdbActors
 
-                var omdbAwards = $('<h4>'); //creates a new h4 element
-                omdbAwards.text('Awards: ' + response.Awards); //adds textNode to omdbAwards
-
                 var omdbCountry = $('<h4>'); //creates a new h4 element
-                omdbCountry.text('Country: ' + response.Country); //adds textNode to omdbCountry
+                omdbCountry.text('Country: ' + response.production_countries[0].name); //adds textNode to omdbCountry
 
                 var omdbLanguage = $('<h4>'); //creates a new h4 element
-                omdbLanguage.text('Language: ' + response.Language); //adds textNode to omdbLanguage
+                omdbLanguage.text('Language: ' + response.spoken_languages[0].name); //adds textNode to omdbLanguage
 
                 var omdbRuntime = $('<h4>'); //creates a new h4 element
-                omdbRuntime.text('Runtime: ' + response.Runtime); //adds textNode to omdbRuntime
+                omdbRuntime.text('Runtime: ' + response.runtime); //adds textNode to omdbRuntime
 
                 var omdbImdbRate = $('<h4>'); //creates a new h4 element
-                omdbImdbRate.text('IMDB Rating: ' + response.imdbRating); //adds textNode to omdbImdbRate
+                omdbImdbRate.text('Vote Average: ' + response.vote_average); //adds textNode to omdbImdbRate
 
                 var omdbPlot = $('<p>'); //creates a new p element
-                omdbPlot.text(response.Plot); //adds textNode to omdbPlot
+                omdbPlot.text(response.overview); //adds textNode to omdbPlot
 
                 $(omdbContainer).append(omdbImage);
                 $(omdbContainer).append(omdbTitle);
+                $(omdbContainer).append(omdbTag);
                 $(omdbContainer).append(omdbYear);
-                $(omdbContainer).append(omdbRated);
                 $(omdbContainer).append(omdbGenre);
                 $(omdbContainer).append(omdbDirector);
                 $(omdbContainer).append(omdbWriter);
                 $(omdbContainer).append(omdbActors);
-                $(omdbContainer).append(omdbAwards);
                 $(omdbContainer).append(omdbCountry);
                 $(omdbContainer).append(omdbLanguage);
                 $(omdbContainer).append(omdbRuntime);
@@ -447,11 +473,21 @@ $(document).on('ready', function(){
                 // Hide about Adam content
                 $("#main-hidable").hide();
 
-            }
 
-            $('#omdb-input').val('');
+                $('#omdb-input').val('');
+
+            });    
+
+        }
+        
+        // Creates AJAX call for the specific movie being 
+        // $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+
+        //     console.log(response);
+
+        //     
      
-        }); 
+        // }); 
 
         return false;
     });    
