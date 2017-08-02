@@ -380,13 +380,39 @@ $(document).on('ready', function(){
             $.ajax({url: queryCrewDetails, method: 'GET'}).done(function(responseCrew) { 
                 console.log('2nd Response', responseCrew);
 
-                getDetails(id, responseCrew);
+                var cast = responseCrew.cast;
+                var crew = responseCrew.crew;
+                var director;
+                var writer;
+                var arr = [];
+
+                for (var i=0; i<7; i++) {
+                    arr.push(cast[i].name);
+                }
+
+                for (var i=0; i<crew.length; i++) {
+                    
+                    if (crew[i].job === 'Director') {
+                        director = crew[i].name;
+                    }
+
+                    if (crew[i].job === 'Screenplay') {
+                        writer = crew[i].name;
+                    }
+
+                }
+
+                var array = arr.join(', ');
+
+                console.log('CAST: ', array);
+
+                getDetails(id, array, director, writer, responseCrew);
                 
             });
 
         }
 
-        function getDetails(id, crew) {
+        function getDetails(id, arrCast, director, writer, crew) {
 
             // var queryDetails = "https://api.themoviedb.org/3/search/movie?api_key=" + key + "&query=" + movie;
             var queryDetails = "https://api.themoviedb.org/3/movie/" + id + "?api_key=" + key + "&language=en-US";
@@ -430,13 +456,13 @@ $(document).on('ready', function(){
                 omdbGenre.text('Genre: ' + response.genres[0].name); //adds textNode to omdbGenre
 
                 var omdbDirector = $('<h4>'); //creates a new h4 element
-                omdbDirector.text('Directed by: ' + response.Director); //adds textNode to omdbDirector
+                omdbDirector.text('Directed by: ' + director); //adds textNode to omdbDirector
 
                 var omdbWriter = $('<h4>'); //creates a new h4 element
-                omdbWriter.text('Written by: ' + response.Writer); //adds textNode to omdbWriter
+                omdbWriter.text('Written by: ' + writer); //adds textNode to omdbWriter
 
                 var omdbActors = $('<h4>'); //creates a new h4 element
-                omdbActors.text('Starring: ' + response.Actors); //adds textNode to omdbActors
+                omdbActors.text('Starring: ' + arrCast); //adds textNode to omdbActors
 
                 var omdbCountry = $('<h4>'); //creates a new h4 element
                 omdbCountry.text('Country: ' + response.production_countries[0].name); //adds textNode to omdbCountry
