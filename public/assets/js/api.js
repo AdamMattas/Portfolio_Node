@@ -19,15 +19,15 @@ nyt = {
     largeIn: "nytimes-lrg-in",
     largeOut: "nytimes-lrg-out"
 },
-omdb = {
-    title: "OMDb Movies",
-    image: "assets/images/omdb.jpg",
+tmdb = {
+    title: "The Movie DB",
+    image: "assets/images/tmdb_1.png",
     placeholder: "Search Movie Title",
-    id: "omdb-input",
-    searchClass: "omdb-search",
-    large: "omdb-lrg",
-    largeIn: "omdb-lrg-in",
-    largeOut: "omdb-lrg-out"
+    id: "tmdb-input",
+    searchClass: "tmdb-search",
+    large: "tmdb-lrg",
+    largeIn: "tmdb-lrg-in",
+    largeOut: "tmdb-lrg-out"
 };
 
 // Wrapping jQuery in Doc Ready function
@@ -356,11 +356,11 @@ $(document).on('ready', function(){
 
 // END THE NEW YORK TIMES API CODE
 // =========================================
-// BEGIN OMDB API CODE
+// BEGIN TMDB API CODE
 
-    $(document).on('click', '#omdb-search', function() {
+    $(document).on('click', '#tmdb-search', function() {
 
-        var movie = $('#omdb-input').val().trim();
+        var movie = $('#tmdb-input').val().trim();
         var key = "5e965acc3187b331b096f142476921ff"
         var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=" + key + "&query=" + movie;
 
@@ -440,10 +440,10 @@ $(document).on('ready', function(){
 
                 var omdbImage = $('<img>'); //creates a new img element
                 omdbImage.attr('src', 'https://image.tmdb.org/t/p/w500/' + response.poster_path); //adds img src to img element
-                omdbImage.addClass('omdb-img'); //adds a class to omdbImage  
+                omdbImage.addClass('tmdb-img'); //adds a class to omdbImage  
                 
                 var omdbTitle = $('<h2>'); //creates a new h3 element
-                omdbTitle.addClass('omdb-title'); //adds a class to omdbTitle
+                omdbTitle.addClass('tmdb-title'); //adds a class to omdbTitle
                 omdbTitle.text(response.original_title); //adds textNode to omdbTitlte
 
                 var omdbTag = $('<h4>'); //creates a new h4 element
@@ -500,7 +500,7 @@ $(document).on('ready', function(){
                 $("#main-hidable").hide();
 
 
-                $('#omdb-input').val('');
+                $('#tmdb-input').val('');
 
             });    
 
