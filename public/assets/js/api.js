@@ -505,20 +505,11 @@ $(document).on('ready', function(){
             });    
 
         }
-        
-        // Creates AJAX call for the specific movie being 
-        // $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
-
-        //     console.log(response);
-
-        //     
-     
-        // }); 
 
         return false;
     });    
 
-// END OMDB API CODE
+// END TMDB API CODE
 // =========================================
 
     // API selection
