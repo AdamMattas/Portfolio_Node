@@ -9,6 +9,11 @@
     box-shadow: 0 0 10px #055c98;
 }
 
+h1 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
 p{
 	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 	color: #777777;
@@ -142,6 +147,14 @@ a:hover{
 	margin-bottom: 10px;
 }
 
+.pad-top-15{
+	padding-top: 15px;
+}
+
+.pad-top-10{
+	padding-top: 10px;
+}
+
 .squares-top{
 	position: absolute;
 	background-image: url("../images/squares2.png");
@@ -187,7 +200,7 @@ a:hover{
   transform: perspective( 600px ) rotateY( 180deg );
 }
 
-.flip3D{ width:260px; height:284px; margin: 1px 15px 0px 0px; border: 1px solid #000000; float:left; }
+.flip3D{ width:260px; height:284px; margin: 15px 15px 15px 0px; border: 1px solid #000000; float:left; }
 .flip3D > .bio-pic-front{
   position:absolute;
   -webkit-transform: perspective( 600px ) rotateY( -180deg );
