@@ -14,22 +14,22 @@ h1 {
 	margin-bottom: 0px;
 }
 
-p{
+p {
 	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-	color: #777777;
+	color: #000000;
 	margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
+	margin-bottom: 1em;
+	margin-left: 0;
+	margin-right: 0;
 }
 
-a{
+a {
 	position: relative;
 	text-decoration: none;
 	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-a:hover{
+a:hover {
 	text-decoration: none;
 }
 
@@ -153,6 +153,10 @@ a:hover{
 
 .pad-top-10{
 	padding-top: 10px;
+}
+
+.font-400 {
+	font-weight: 400;
 }
 
 .squares-top{
