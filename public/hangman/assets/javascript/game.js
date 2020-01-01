@@ -130,7 +130,6 @@ var hangman = {
     //use actual keyboard to select letters
     document.getElementById("keyboard-icon").onclick = function showKeyboard() {
       var virtual = document.getElementById("keyboard");
-
       virtual.classList.toggle("hide");
     };
 
@@ -298,10 +297,6 @@ var hangman = {
     });
   },
 
-  showKeyboard: function(event) {
-    console.log("EVENT SHOW KEYBOARD: ", event);
-  },
-
   //plays correct key sound
   playAudio1: function() {
     hangman.audio1.play();
@@ -420,8 +415,22 @@ var hangman = {
 //play intro video and press key to start game
 //doesn't work due to chrome autoplay policy
 function initiate() {
-  hangman.vid1.play();
-  document.onkeyup = function(event) {
+  document.onclick = function() {
+    hangman.vid1.play();
+  };
+
+  document.onkeyup = function() {
     hangman.newGame();
+  };
+
+  //Use virtual keyboard to select letters
+  document.getElementById("keyboard").onclick = function() {
+    hangman.newGame();
+  };
+
+  //use actual keyboard to select letters
+  document.getElementById("keyboard-icon").onclick = function showKeyboard() {
+    var virtual = document.getElementById("keyboard");
+    virtual.classList.toggle("hide");
   };
 }
