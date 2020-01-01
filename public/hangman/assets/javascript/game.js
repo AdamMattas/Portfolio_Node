@@ -3,67 +3,70 @@ var hangman = {
   word: document.getElementById("word"),
   wrongDiv: document.getElementById("wrong"),
   alphabet: [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z"
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z"
   ],
   words: [
-    "dilithium",
-    "shuttlecraft",
-    "defiant",
-    "voyager",
-    "vulcan",
-    "cardassian",
-    "bajoran",
-    "nebula",
-    "galaxy",
-    "humanoid",
-    "tricorder",
-    "betazoid",
-    "neutron",
-    "wormhole",
-    "andorian",
-    "subspace",
-    "positronic",
-    "holodeck",
-    "disruptor",
-    "shields",
-    "data",
-    "enterprise",
-    "assimilated",
-    "ferengi",
-    "collective",
-    "federation",
-    "starfleet",
-    "transporter",
-    "phasers",
-    "android",
-    "klingon",
-    "romulan",
-    "orbit"
+    "DILITHIUM",
+    "SHUTTLECRAFT",
+    "DEFIANT",
+    "VOYAGER",
+    "VULCAN",
+    "CARDASSIAN",
+    "BAJORAN",
+    "NEBULA",
+    "GALAXY",
+    "HUMANOID",
+    "TRICORDER",
+    "BETAZOID",
+    "NEUTRON",
+    "WORMHOLE",
+    "ANDORIAN",
+    "SUBSPACE",
+    "POSITRONIC",
+    "HOLODECK",
+    "DISRUPTOR",
+    "SHIELDS",
+    "DATA",
+    "ENTERPRISE",
+    "ASSIMILIATED",
+    "FERENGI",
+    "COLLECTIVE",
+    "FEDERATION",
+    "STARFLEET",
+    "TRANSPORTER",
+    "PHASERS",
+    "ANDROID",
+    "KLINGON",
+    "ROMULAN",
+    "ORBIT",
+    "PARADOX",
+    "DIMENSION",
+    "PHOTON"
   ],
   letterQuery: [""],
   guessed: "",
@@ -119,23 +122,40 @@ var hangman = {
     //detects key input and passes it to checker and pushes the letter to an array
     //also checks if the letter has already been picked
     document.onkeyup = function(event) {
-      var letter = String.fromCharCode(event.keyCode).toLowerCase();
-      var guessed;
-      //   console.log(hangman.alphabet);
-      //   console.log("Index Of: ", hangman.alphabet.indexOf(letter));
-      if (hangman.alphabet.indexOf(letter) !== -1) {
-        for (i = 0; i < hangman.letterQuery.length; i++) {
-          if (letter == hangman.letterQuery[i]) {
-            guessed = true;
-          }
-        }
-        if (!guessed) {
-          hangman.letterQuery.push(letter);
-          console.log(hangman.letterQuery);
-          hangman.checkLetter(letter);
+      var letter = String.fromCharCode(event.keyCode).toUpperCase();
+
+      hangman.checkValid(letter);
+    };
+
+    //use actual keyboard to select letters
+    document.getElementById("keyboard-icon").onclick = function showKeyboard() {
+      var virtual = document.getElementById("keyboard");
+
+      virtual.classList.toggle("hide");
+    };
+
+    //Use virtual keyboard to select letters
+    document.getElementById("keyboard").onclick = function keyClick() {
+      hangman.checkValid(event.target.id.toUpperCase());
+    };
+  },
+
+  checkValid: function(letter) {
+    console.log("CHECK VALID INVOKED");
+    var guessed;
+
+    if (hangman.alphabet.indexOf(letter) !== -1) {
+      for (i = 0; i < hangman.letterQuery.length; i++) {
+        if (letter === hangman.letterQuery[i]) {
+          guessed = true;
         }
       }
-    };
+      if (!guessed) {
+        hangman.letterQuery.push(letter);
+        console.log(hangman.letterQuery);
+        hangman.checkLetter(letter);
+      }
+    }
   },
 
   // Check whether selected letter is in the word to be guessed
@@ -149,7 +169,7 @@ var hangman = {
     for (var i = 0; i < hangman.wordLength; i++) {
       // if the selected letter matches one in the word to guess,
       // replace the underscore and increase the number of correct guesses
-      if (hangman.wordToGuess.charAt(i) == letter.toLowerCase()) {
+      if (hangman.wordToGuess.charAt(i) == letter.toUpperCase()) {
         placeholders[i] = letter;
         wrongGuess = false;
         hangman.correctGuesses++;
@@ -181,8 +201,9 @@ var hangman = {
           hangman.stopVid();
           hangman.playVid9();
           //displays the correctly guessed word
-          document.getElementById("over-success").innerHTML =
-            hangman.wordToGuess;
+          var success = document.getElementById("over-success");
+          success.innerHTML = hangman.wordToGuess;
+          success.classList.remove("hide");
           //listens for end of video before starting a new game
           hangman.vidEnd.addEventListener("ended", function(e) {
             hangman.newGame();
@@ -217,7 +238,10 @@ var hangman = {
       } else {
         hangman.clearDiv();
         //displays the word that the player failed to guess correctly
-        document.getElementById("over-fail").innerHTML = hangman.wordToGuess;
+        //document.getElementById("over-fail").innerHTML = hangman.wordToGuess;
+        var fail = document.getElementById("over-fail");
+        fail.innerHTML = hangman.wordToGuess;
+        fail.classList.remove("hide");
         //plays fail video
         hangman.stopVid();
         hangman.playVid10();
@@ -252,7 +276,9 @@ var hangman = {
     document.getElementById("wrong").innerHTML = "";
     document.getElementById("word").innerHTML = "";
     document.getElementById("over-fail").innerHTML = "";
+    document.getElementById("over-fail").classList.add("hide");
     document.getElementById("over-success").innerHTML = "";
+    document.getElementById("over-success").classList.add("hide");
   },
 
   //hint function (not implemented yet just plays audio)
@@ -270,6 +296,10 @@ var hangman = {
     hangman.vidAbort.addEventListener("ended", function(e) {
       window.location.reload();
     });
+  },
+
+  showKeyboard: function(event) {
+    console.log("EVENT SHOW KEYBOARD: ", event);
   },
 
   //plays correct key sound
@@ -388,6 +418,7 @@ var hangman = {
 };
 
 //play intro video and press key to start game
+//doesn't work due to chrome autoplay policy
 function initiate() {
   hangman.vid1.play();
   document.onkeyup = function(event) {
