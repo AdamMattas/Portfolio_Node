@@ -46,7 +46,7 @@ p {
 }
 
 .background-main {
-  background: url("../images/star_trek_hangman.png");
+  background-image: url("../images/star_trek_hangman.png");
   background-repeat: no-repeat;
   width: 1244px;
   height: 700px;
