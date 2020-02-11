@@ -97,6 +97,7 @@ $(document).on("ready", function() {
 
       var tubeTitle = $("<h4>"); //creates a new h4 element
       tubeTitle.text(response.items[i].snippet.title); //creates text node with video title
+      tubeTitle.addClass("tube-h4"); //add tube-h4 class to h4 element
 
       var tubeDesc = $("<p>"); //creates a new p element
       tubeDesc.text(response.items[i].snippet.description); //creates text node with video description
@@ -515,9 +516,9 @@ $(document).on("ready", function() {
     var name = $(this).data("name");
     var apiName = eval(name);
 
-    var lrgImg = apiName.large;
-    var lrgInImg = apiName.largeIn;
-    var lrgOutImg = apiName.largeOut;
+    // var lrgImg = apiName.large;
+    // var lrgInImg = apiName.largeIn;
+    // var lrgOutImg = apiName.largeOut;
 
     // var width = $(document).width() - $('#squares-bottom-1').width();
 
@@ -574,9 +575,9 @@ $(document).on("ready", function() {
 
   // Restores content to the way it was before api searches and selection
   $(document).on("click", ".api-restore", function() {
-    var lrgImg = $(this).attr("data-id");
-    var lrgInImg = $(this).attr("data-in");
-    var lrgOutImg = $(this).attr("data-out");
+    // var lrgImg = $(this).attr("data-id");
+    // var lrgInImg = $(this).attr("data-in");
+    // var lrgOutImg = $(this).attr("data-out");
 
     // var width = $(document).width() - $('#squares-bottom-1').width();
 
@@ -588,7 +589,7 @@ $(document).on("ready", function() {
     //     $('#squares-bottom-1').removeClass('squares-bottom-animated').addClass('squares-bottom').removeAttr("style");
     // });
 
-    apiFadeOut(lrgImg, lrgInImg, lrgOutImg);
+    // apiFadeOut(lrgImg, lrgInImg, lrgOutImg);
 
     $("#api-search").hide();
     $("#api-hidable").show();
@@ -596,25 +597,25 @@ $(document).on("ready", function() {
     $("#main-hidable").show();
   });
 
-  function apiFadeIn(lrgImg, lrgInImg, lrgOutImg) {
-    $("#" + lrgImg)
-      .addClass(lrgInImg)
-      .removeClass(lrgImg)
-      .removeClass(lrgOutImg);
-  }
+  // function apiFadeIn(lrgImg, lrgInImg, lrgOutImg) {
+  //   $("#" + lrgImg)
+  //     .addClass(lrgInImg)
+  //     .removeClass(lrgImg)
+  //     .removeClass(lrgOutImg);
+  // }
 
-  function apiFadeOut(lrgImg, lrgInImg, lrgOutImg) {
-    $("#" + lrgImg)
-      .addClass(lrgOutImg)
-      .removeClass(lrgInImg),
-      function() {
-        restoreFade(lrgImg);
-      };
-  }
+  // function apiFadeOut(lrgImg, lrgInImg, lrgOutImg) {
+  //   $("#" + lrgImg)
+  //     .addClass(lrgOutImg)
+  //     .removeClass(lrgInImg),
+  //     function() {
+  //       restoreFade(lrgImg);
+  //     };
+  // }
 
-  function restoreFade(lrgImg) {
-    $("#" + lrgImg)
-      .addClass(lrgImg)
-      .removeClass(lrgOutImg);
-  }
+  // function restoreFade(lrgImg) {
+  //   $("#" + lrgImg)
+  //     .addClass(lrgImg)
+  //     .removeClass(lrgOutImg);
+  // }
 });
