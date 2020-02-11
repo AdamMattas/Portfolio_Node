@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Contact Adam Mattas</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon-16x16.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="assets/css/bootstrap.css" media="screen">
-    <link rel="stylesheet" href="assets/css/custom.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/bootstrap_override.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css" media="screen" />
+    <link rel="stylesheet" href="assets/css/custom.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap_override.css" />
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
       <script src="../bower_components/respond/dest/respond.min.js"></script>
     <![endif]-->
     <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-23019901-1"]);
+      _gaq.push(["_setDomainName", "bootswatch.com"]);
+      _gaq.push(["_setAllowLinker", true]);
+      _gaq.push(["_trackPageview"]);
 
-     var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-23019901-1']);
-      _gaq.push(['_setDomainName', "bootswatch.com"]);
-        _gaq.push(['_setAllowLinker', true]);
-      _gaq.push(['_trackPageview']);
-
-     (function() {
-       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-     })();
-
+      (function() {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol
+            ? "https://ssl"
+            : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
     </script>
   </head>
   <body>
@@ -37,37 +46,42 @@
       <div class="container">
         <div class="navbar-header">
           <a href="/index" class="navbar-brand" title="Full-Stack Developer">
-            <img class="adam-brand-sm" src="assets/images/adam_mattas.png">
+            <img class="adam-brand-sm" src="assets/images/adam_mattas.png" />
           </a>
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <button
+            class="navbar-toggle"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbar-main"
+          >
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
-
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/index">About</a></li>
             <li><a href="/portfolio">Portfolio</a></li>
             <li><a class="nav-link-active" href="/contact">Contact</a></li>
-            <li class="dropdown-toggle" data-toggle="dropdown"><a href="">Resume
-            <span class="caret"></span></a></li>
+            <li class="dropdown-toggle" data-toggle="dropdown">
+              <a href="">Resume <span class="caret"></span></a>
+            </li>
             <ul class="dropdown-menu">
               <li><a href="/resume">View Resume</a></li>
-              <li><a href="/resume/Resume_2017.pdf" download>Download Resume</a></li>
+              <li>
+                <a href="/resume/Resume_Adam_Mattas_2020.pdf" download
+                  >Download Resume</a
+                >
+              </li>
             </ul>
           </ul>
-
         </div>
       </div>
     </div>
 
-
     <div class="container">
-
       <div class="row row-top">
-
         <div class="col-md-9">
           <div class="panel panel-primary margin-top-eight">
             <div class="panel-heading">
@@ -75,37 +89,67 @@
             </div>
             <div class="panel-body">
               <div class="width-100 overline">
-                <form class="form-horizontal row-top-15" action="/contact/submit" method="POST">
+                <form
+                  class="form-horizontal row-top-15"
+                  action="/contact/submit"
+                  method="POST"
+                >
                   <fieldset>
-
                     <div class="form-group">
-                      <label for="inputName" class="col-lg-2 control-label">Name</label>
+                      <label for="inputName" class="col-lg-2 control-label"
+                        >Name</label
+                      >
                       <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputName" name="sender" placeholder="Name" required>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputName"
+                          name="sender"
+                          placeholder="Name"
+                          required
+                        />
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                      <label for="inputEmail" class="col-lg-2 control-label"
+                        >Email</label
+                      >
                       <div class="col-lg-10">
-                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" required>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="inputEmail"
+                          name="email"
+                          placeholder="Email"
+                          required
+                        />
                       </div>
                     </div>
-                    
+
                     <div class="form-group">
-                      <label for="textArea" class="col-lg-2 control-label">Message</label>
+                      <label for="textArea" class="col-lg-2 control-label"
+                        >Message</label
+                      >
                       <div class="col-lg-10">
-                        <textarea class="form-control" rows="3" id="textArea" name="message" required></textarea>
+                        <textarea
+                          class="form-control"
+                          rows="3"
+                          id="textArea"
+                          name="message"
+                          required
+                        ></textarea>
                         <span class="help-block">Enter your message here.</span>
                       </div>
                     </div>
-                    
+
                     <div class="form-group">
                       <div class="col-lg-10 col-lg-offset-2">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">
+                          Submit
+                        </button>
                       </div>
                     </div>
-
                   </fieldset>
                 </form>
               </div>
@@ -121,34 +165,50 @@
             <div class="panel-body">
               <div class="width-100 overline">
                 <a href="https://github.com/adamfader" target="_blank">
-                  <img class="icon-social float-left margin-right-social" src="assets/images/1462182866_github.png" alt="GitHub Icon" title="GitHub" />
+                  <img
+                    class="icon-social float-left margin-right-social"
+                    src="assets/images/1462182866_github.png"
+                    alt="GitHub Icon"
+                    title="GitHub"
+                  />
                 </a>
 
-                <a href="https://www.linkedin.com/in/adam-mattas-13217711b?trk=nav_responsive_tab_profile" target="_blank">
-                  <img class="icon-social float-left margin-right-social" src="assets/images/1462182883_linkedin.png" alt="LinkedIn Icon" title="LinkedIn" />
+                <a
+                  href="https://www.linkedin.com/in/adam-mattas-13217711b?trk=nav_responsive_tab_profile"
+                  target="_blank"
+                >
+                  <img
+                    class="icon-social float-left margin-right-social"
+                    src="assets/images/1462182883_linkedin.png"
+                    alt="LinkedIn Icon"
+                    title="LinkedIn"
+                  />
                 </a>
 
-                <a href="http://stackoverflow.com/users/6289027/adam-m" target="_blank">
-                  <img class="icon-social float-left" src="assets/images/1462182812_overflow.png" alt="Stackoverflow Icon" title="Stack Overflow" />
+                <a
+                  href="http://stackoverflow.com/users/6289027/adam-m"
+                  target="_blank"
+                >
+                  <img
+                    class="icon-social float-left"
+                    src="assets/images/1462182812_overflow.png"
+                    alt="Stackoverflow Icon"
+                    title="Stack Overflow"
+                  />
                 </a>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-
-
     </div>
 
     <footer>
-
-      <div class="footer-bottom">&copy; Copyright 2016 Adam Mattas
+      <div class="footer-bottom">
+        &copy; Copyright 2016 Adam Mattas
         <span class="squares-bottom"></span>
       </div>
-
     </footer>
-
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
