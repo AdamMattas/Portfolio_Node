@@ -5,7 +5,8 @@ var methodOverride = require('method-override');
 var path = require('path');
 
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static(process.cwd() + '/public'));
+// app.use(express.static(process.cwd() + '/public'));
+app.use(express.static('/public'));
 
 app.use(bodyParser.urlencoded({
   extended: false
@@ -15,14 +16,14 @@ app.use(methodOverride('_method'));
 
 var exphbs = require('express-handlebars');
 var hbs = exphbs.create({
-  extname:'handlebars',
-  layoutsDir:  './views/layouts',
+  extname: 'handlebars',
+  layoutsDir: './views/layouts',
   defaultLayout: 'main',
   // Specify helpers which are only registered on this instance.
   helpers: {
-    prettifyDatetime: function(timestamp) {
+    prettifyDatetime: function (timestamp) {
       return moment(timestamp).format('lll');
-    } 
+    }
   }
 
 });
@@ -40,6 +41,6 @@ var routes = require('./controllers/portfolio_controller.js');
 app.use('/', routes);
 
 var PORT = process.env.PORT || 3000;
-app.listen(PORT, function(){
+app.listen(PORT, function () {
   console.log('App listening on PORT ' + PORT);
 })
