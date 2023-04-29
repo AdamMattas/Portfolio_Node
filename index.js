@@ -6,7 +6,7 @@ var path = require('path');
 
 // Serve static content for the app from the "public" directory in the application directory.
 // app.use(express.static(process.cwd() + '/public'));
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({
   extended: false
